@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from './actions/actions';
 import { bindActionCreators } from 'redux'
+import * as actionCreators from './actions/actions';
 import TodoList from './components/TodoList'
+import Immutable from 'immutable';
 
 export default class App extends Component {
     updateItem(actions) {
@@ -10,14 +11,13 @@ export default class App extends Component {
     }
     render() {
         const { actions, items } = this.props;
-        console.log('this.props', this.props);
         return (
             <div>
                 <h3> todo Redux </h3>
                 <input type="text" ref="textInput" />
                 <button onClick={this.updateItem.bind(this, actions)}>submit</button>
                 <br/>
-                <TodoList items={items} onItemClick={function(index) {
+                <TodoList items={items.todo} onItemClick={function(index) {
                     actions.completeItem(index);
                 }}/>
             </div>
@@ -27,7 +27,7 @@ export default class App extends Component {
 
 function mapStateToProps(state) {
   return {
-      items: state
+      items: state.toJS()
   };
 }
 
