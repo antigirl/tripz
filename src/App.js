@@ -26,6 +26,8 @@ export default class App extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('why is this being called twice');
+    console.log(state);
   return {
       items: state.toJS()
   };
