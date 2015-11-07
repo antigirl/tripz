@@ -3,7 +3,6 @@ import ToDoItem from './ToDoItem';
 
 export default class TodoList extends Component {
     render() {
-        console.log(this.props);
         return (
             <ul style={{padding:0,margin:0}}>
             {this.props.items.map((item, i) => {

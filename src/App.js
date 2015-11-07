@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {addItem, completeItem} from './actions/actions';
+import * as actionCreators from './actions/actions';
+import { bindActionCreators } from 'redux'
 import TodoList from './components/TodoList'
 
 export default class App extends Component {
-    updateItem(dispatch) {
-        dispatch(addItem(this.refs.textInput.value));
+    updateItem(actions) {
+        actions.addItem(this.refs.textInput.value);
     }
     render() {
-        const { dispatch, items } = this.props;
+        const { actions, items } = this.props;
+        console.log('this.props', this.props);
         return (
             <div>
                 <h3> todo Redux </h3>
                 <input type="text" ref="textInput" />
-                <button onClick={this.updateItem.bind(this, dispatch)}>submit</button>
+                <button onClick={this.updateItem.bind(this, actions)}>submit</button>
                 <br/>
                 <TodoList items={items} onItemClick={function(index) {
-                    dispatch(completeItem(index))
+                    actions.completeItem(index);
                 }}/>
             </div>
         );
@@ -29,4 +31,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App)
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actionCreators, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
