@@ -11,3 +11,10 @@ export function completeItem(index) {
         index: index
     }
 }
+
+export function updateFilter(filterType) {
+    return {
+        type: 'UPDATE_FILTER',
+        theFilter: filterType
+    }
+}

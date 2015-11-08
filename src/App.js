@@ -9,15 +9,24 @@ export default class App extends Component {
     updateItem(actions) {
         actions.addItem(this.refs.textInput.value);
     }
+
+    updateFilter(actions, type) {
+        actions.updateFilter(type);
+    }
+
     render() {
-        const { actions, items } = this.props;
+        const { actions, items, filter } = this.props;
+        let showAlldec = filter.type === 'SHOW_ALL' ? 'red' : 'black';
+        let showCompletedec = filter.type === 'SHOW_COMPLETED' ? 'red' : 'black';
         return (
             <div>
-                <h3> todo Redux </h3>
+                <h2 style={{margin:0}}> todo Redux </h2>
+                <h5 onClick={this.updateFilter.bind(this,actions,'SHOW_ALL')} style={{margin:0, color:showAlldec}}>SHOW_ALL</h5>
+                <h5 onClick={this.updateFilter.bind(this,actions,'SHOW_COMPLETED')} style={{margin:0, color:showCompletedec}}>SHOW_COMPLETED</h5> <br/>
                 <input type="text" ref="textInput" />
                 <button onClick={this.updateItem.bind(this, actions)}>submit</button>
                 <br/>
-                <TodoList items={items.todo} onItemClick={function(index) {
+                <TodoList items={items} filter={filter.type} onItemClick={function(index) {
                     actions.completeItem(index);
                 }}/>
             </div>
@@ -26,10 +35,9 @@ export default class App extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('why is this being called twice');
-    console.log(state);
   return {
-      items: state.toJS()
+      items: state.todo.toJS(),
+      filter: state.filter.toJS()
   };
 }
 

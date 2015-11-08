@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './app';
-import {todos} from './reducer/reducers'
+import todoApp from './reducer/reducers'
 
-let store = createStore(todos);
+let store = createStore(todoApp);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
