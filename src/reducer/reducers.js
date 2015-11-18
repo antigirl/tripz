@@ -1,4 +1,3 @@
-import {addItem, completeItem} from '../actions/actions';
 import Immutable from 'immutable';
 
 const initialToDoState = Immutable.List.of({text: 'item 1', completed: false}, {text: 'item 2', completed: false});
@@ -30,7 +29,6 @@ function filterReducer(state=initialFilterState, action) {
     }
 }
 
-var empty = Immutable.Map({});
 export default function todoApp(state={}, action) {
     return {
         todo: todoReducer(state.todo, action),
