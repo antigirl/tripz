@@ -14,7 +14,7 @@ export default class Search extends Component {
                             <div className="tag tag__holidaytype">Family holiday<span className="tag__cancel">x</span></div>
                             <input type="text" plceholder="search"/>
                         </div>
-                        <button className="search__button">SEARCH</button>
+                        <button className="search__button" onClick={()=>this.props.actions.getEvents()}>SEARCH</button>
                     </form>
 
                     <ul className="search__options">

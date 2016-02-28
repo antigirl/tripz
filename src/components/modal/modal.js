@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import './modalstyle.scss';
 
 export default class Modal extends Component {
@@ -12,15 +13,12 @@ export default class Modal extends Component {
             background: 'url(http://localhost:3000/staticmap.png) 50% 50% / cover no-repeat'
         };
 
-        const cardTypeStyles = {
-            background: 'rgba(230,90,171,.8)'
-        };
-
+        const cardTypeClass = classNames('modal__type', type);
         return (
             <div className="modal__body">
                 <div className="modal__image" style={cardBgStyles}>
                     <span className="modal__fav"><img src="http://localhost:3000/heart.svg" width="40" /></span>
-                    <div className="modal__type" style={cardTypeStyles}>{type}</div>
+                    <div className={cardTypeClass}>{type}</div>
                     <h1 className="modal__header">{name}</h1>
                 </div>
 

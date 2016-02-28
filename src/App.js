@@ -29,7 +29,7 @@ export default class App extends Component {
 
         return (
             <div>
-                <Search />
+                <Search actions={actions} />
 
                 <div className="wrapper">
                     <Filter />

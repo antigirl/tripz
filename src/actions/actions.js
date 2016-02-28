@@ -31,7 +31,7 @@ export function cardClick(id) {
 export function getEvents() {
     return dispatch => {
         fetchUtil(serverEndPoint+ '/events').then((result)=> {
-            dispatch(gotEvents(result));
+            dispatch(gotEvents(result.shuffle()));
         });
     };
 }
@@ -47,4 +47,16 @@ function fetchUtil(query) {
             reject(err);
         });
     });
+}
+
+Array.prototype.shuffle = function() {
+  var i = this.length, j, temp;
+  if ( i == 0 ) return this;
+  while ( --i ) {
+     j = Math.floor( Math.random() * ( i + 1 ) );
+     temp = this[i];
+     this[i] = this[j];
+     this[j] = temp;
+  }
+  return this;
 }
