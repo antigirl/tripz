@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actionCreators from './actions/actions';
 import Card from './components/card/card';
+import Modal from './components/modal/modal';
+import classNames from 'classnames';
 import './styles/reset.scss'
 import './styles/main.scss'
 
@@ -12,11 +14,22 @@ export default class App extends Component {
     }
 
     render() {
+        const { appState, events, actions} = this.props;
+        const modalClass = classNames('modal', {
+            'modal--show': appState.modal
+        });
+
+        console.log(appState);
         return (
-            <div>
-                {this.props.events.map((eventDetails, i) => {
-                    return <Card {...eventDetails} key={i}/>;
+            <div className="wrapper">
+                {events.map((eventDetails, i) => {
+                    return <Card {...eventDetails} actions={actions} key={i}/>;
                 })}
+
+
+                <div className={modalClass} onClick={()=> {actions.hideModal()}}>
+                    <Modal {...appState.card}/>
+                </div>
             </div>
         );
     }
@@ -24,7 +37,8 @@ export default class App extends Component {
 
 function mapStateToProps(state) {
   return {
-      events: state.events
+      events: state.events,
+      appState: state.appState
   };
 }
 

@@ -1,3 +1,5 @@
+const serverEndPoint = 'http://localhost:3000';
+
 export function gotEvents(events) {
     return {
         type: 'GOT_EVENTS',
@@ -5,14 +7,44 @@ export function gotEvents(events) {
     }
 }
 
-export function getEvents() {
+export function showModal(card) {
+    return {
+        type: 'SHOW_MODAL',
+        card
+    }
+}
+
+export function hideModal() {
+    return {
+        type: 'HIDE_MODAL'
+    }
+}
+
+export function cardClick(id) {
     return dispatch => {
-            fetch('http://localhost:3000/events', {
-        	method: 'get'
-        }).then((response) => response.json()).then((result) => {
-            dispatch(gotEvents(result));
-        }).catch((err) => {
-            console.log('error from feed ', err);
+        fetchUtil(serverEndPoint+'/events?id=' + id).then((result)=> {
+            dispatch(showModal(result[0]));
         });
     };
+}
+
+export function getEvents() {
+    return dispatch => {
+        fetchUtil(serverEndPoint+ '/events').then((result)=> {
+            dispatch(gotEvents(result));
+        });
+    };
+}
+
+function fetchUtil(query) {
+    return new Promise((resolve, reject) => {
+        fetch(query, {
+            method: 'get'
+        }).then((response) => response.json()).then((result) => {
+            resolve(result);
+        }).catch((err) => {
+            console.log('error from feed ', err);
+            reject(err);
+        });
+    });
 }

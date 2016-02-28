@@ -1,39 +1,43 @@
 {
   "events": [
     {
+      "id": 1,
       "type": "music",
       "name": "Live Jazz in Soho Members' Club",
       "image": "music1.jpg",
       "date": "Wednesday 2 March, 6:00 PM",
       "location": "GH Space, Soho",
-      "suitablefor": "couples",
+      "suitablefor": "couples, families",
       "desc": "Step through the inconspicuous doorway into an intimate candlelit bar, where the talented Piano Bar Players perform live jazz from 6:30pm. Sip on prohibition-style cocktails, with classic whisky blends, rum infusions and all other kinds of sweet and zesty creations, expertly shaken by skilled mixologists. Spectacular music, ambience and drinks – the Piano Bar is the perfect spot for after-work or a date night with a difference."
     },
     {
+      "id": 2,
       "type": "music",
       "name": "Jazz Nursery Aboard The Golden Hinde",
       "image": "music2.jpg",
       "date": "Thursday 31 March, 7:30 PM",
       "location": "The Golden Hinde, London Bridge",
-      "suitablefor": "couples",
+      "suitablefor": "families, couples, friends",
       "desc": "Get stirred up by the runaway grooves of some of London's most exciting up-and-coming jazz groups, including the Hannes Riepler Band in July and Miguel Gorodi Nonet in August. These movers-and-shakers have been brought aboard the famous Elizabethan galleon, The Golden HInde, by the dedicated promoters at Jazz Nursery, who were selected for the Arts Council's Grants For The Arts. So c'mon. Sip drinks in Sir Francis Drake's private cabin. Climb the crow's nest. Tune in to some great jazz."
     },
     {
+      "id": 3,
       "type": "music",
       "name": "The Ultimate '80s Party Band",
       "image": "music3.jpg",
       "date": "Friday 4 March, 7:00 PM",
       "location": "Brooklyn Bowl London, North Greenwich",
-      "suitablefor": "couples",
+      "suitablefor": "couples, friends",
       "desc": "Formed in early 2013 Popgun has uniquely recreated the energy, visual detail and unique sounds of the 1980s, featuring the wildest range of material from A-ha to Wham! Not only can you expect a show packed with instantly recognisable classics such as 'Livin' On A Prayer', 'Dangerzone', 'Let's Dance', 'We Built This City' and 'Sweet Child O'Mine' but also other gems such as 'Your Love', 'Easy Lover' and 'Died In Your Arms'. Featuring a professional live four-piece band, every attention has been made to ensure Popgun is the most authentic sounding experience possible to the '80s era. It's time to grab your leg-warmers, back comb that hair and get ready for the ultimate party."
     },
     {
+      "id": 4,
       "type": "music",
       "name": "London Symphony Orchestra Concert",
       "image": "music4.jpg",
       "date": "Friday 14 March, 7:00 PM",
       "location": "LSO St Luke's, Old Street",
-      "suitablefor": "couples",
+      "suitablefor": "friends, couples",
       "desc": "If you've never been inside LSO St Luke's then these free Friday lunchtime concerts are a must. Go and discover more about music and instruments of the orchestra in the beautiful setting of the Jerwood Hall in specially designed concerts by LSO musicians and students from the Guildhall School. The concerts offer an informal introduction to the LSO and the world of music-making. Presenter Rachel Leach talks about the works and the instruments, and there are opportunities to ask questions of Rachel and the musicians. For this one members of the LSO string section perform Mendelssohn's Octet as part of a series of concerts focussing on how composers reflected the French Impressionist art movement."
     }
   ]

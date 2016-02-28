@@ -3,7 +3,7 @@ import './cardstyle.scss';
 
 export default class Card extends Component {
     render() {
-        const { type, name, image, date, location, suitablefor, desc } = this.props;
+        const { id, type, name, image, date, location, suitablefor, desc, actions } = this.props;
         const truncateDesc = desc.substring(0, 100);
 
         const cardBgStyles = {
@@ -15,7 +15,7 @@ export default class Card extends Component {
         };
 
         return (
-            <div className="card">
+            <div className="card" onClick={() => actions.cardClick(id)}>
                 <div className="card__image" style={cardBgStyles}>
                     <div className="card__type" style={cardTypeStyles}>{type}</div>
                     <span className="card__fav"><img src="http://localhost:3000/heart.svg" width="15" /></span>
@@ -28,8 +28,8 @@ export default class Card extends Component {
                     </span>
 
                     <ul className="card__footer">
-                        <li> <span className="card__footericons"><img src="http://localhost:3000/calendar.svg" width="15" /></span> {date} </li>
-                        <li> <span className="card__footericons"><img src="http://localhost:3000/map.svg" height="17"/></span> {location} </li>
+                        <li> <span className="card__footericons"><img src="http://localhost:3000/calendar.svg" width="12" /></span> {date} </li>
+                        <li> <span className="card__footericons"><img src="http://localhost:3000/map.svg" height="12"/></span> {location} </li>
                     </ul>
                 </div>
             </div>

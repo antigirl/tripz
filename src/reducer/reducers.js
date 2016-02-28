@@ -8,8 +8,27 @@ function eventsReducer(state=[], action) {
     }
 }
 
-export default function todoApp(state={}, action) {
+function appStateReducer(state={}, action) {
+    switch (action.type) {
+        case 'SHOW_MODAL':
+        return Object.assign({}, state, {
+            modal: true,
+            card: action.card
+        });
+
+        case 'HIDE_MODAL':
+        return Object.assign({}, state, {
+            modal: false
+        });
+
+        default:
+        return state;
+    }
+}
+
+export default function trips(state={}, action) {
     return {
         events: eventsReducer(state.events, action),
+        appState: appStateReducer(state.appState, action)
     }
 }
