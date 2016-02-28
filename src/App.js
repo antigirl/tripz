@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actionCreators from './actions/actions';
-import Card from './components/card';
+import Card from './components/card/card';
+import './styles/reset.scss'
+import './styles/main.scss'
 
 export default class App extends Component {
     componentDidMount() {
@@ -10,11 +12,11 @@ export default class App extends Component {
     }
 
     render() {
-        console.log('state', this.props.events);
         return (
             <div>
-                APP
-                <Card />
+                {this.props.events.map((eventDetails, i) => {
+                    return <Card {...eventDetails} key={i}/>;
+                })}
             </div>
         );
     }
