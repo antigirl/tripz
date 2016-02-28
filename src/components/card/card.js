@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import './cardstyle.scss';
 
 export default class Card extends Component {
@@ -10,14 +11,13 @@ export default class Card extends Component {
             background: 'url(http://localhost:3000/' + image + ') 50% 50% / cover no-repeat'
         };
 
-        const cardTypeStyles = {
-            background: 'rgba(230,90,171,.8)'
-        };
+        const cardTypeClass = classNames('card__type', type);
+
 
         return (
             <div className="card" onClick={() => actions.cardClick(id)}>
                 <div className="card__image" style={cardBgStyles}>
-                    <div className="card__type" style={cardTypeStyles}>{type}</div>
+                    <div className={cardTypeClass}>{type}</div>
                     <span className="card__fav"><img src="http://localhost:3000/heart.svg" width="15" /></span>
                 </div>
 

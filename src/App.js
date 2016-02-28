@@ -21,6 +21,12 @@ export default class App extends Component {
             'modal--show': appState.modal
         });
 
+        if (appState.modal) {
+            document.body.classList.add('modal__open');
+        } else {
+            document.body.classList.remove('modal__open');
+        }
+
         return (
             <div>
                 <Search />
