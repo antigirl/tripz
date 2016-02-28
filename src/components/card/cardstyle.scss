@@ -1,7 +1,6 @@
-body {
-    background: #f1f1e9;
+.card__container {
+    display: flex;
 }
-
 .card {
     width: 300px;
     height: 400px;
@@ -12,6 +11,10 @@ body {
     cursor: pointer;
     background: #fff;
     color: #404d57;
+
+    &:nth-child(n+5) {
+        margin-right: 0;
+    }
 }
 
 
