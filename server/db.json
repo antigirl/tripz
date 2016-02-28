@@ -1,0 +1,13 @@
+{
+  "events": [
+    {
+      "name": "some event1"
+    },
+    {
+      "name": "some event2"
+    },
+    {
+      "name": "some event3"
+    }
+  ]
+}

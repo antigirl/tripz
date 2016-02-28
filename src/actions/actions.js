@@ -1,20 +1,18 @@
-export function addItem (item) {
+export function gotEvents(events) {
     return {
-        type: 'ADD_ITEM',
-        item: item
+        type: 'GOT_EVENTS',
+        events: events
     }
 }
 
-export function completeItem(index) {
-    return {
-        type: 'COMPLETE_ITEM',
-        index: index
-    }
-}
-
-export function updateFilter(filterType) {
-    return {
-        type: 'UPDATE_FILTER',
-        theFilter: filterType
-    }
+export function getEvents() {
+    return dispatch => {
+            fetch('http://localhost:3000/events', {
+        	method: 'get'
+        }).then((response) => response.json()).then((result) => {
+            dispatch(gotEvents(result));
+        }).catch((err) => {
+            console.log('error from feed ', err);
+        });
+    };
 }
