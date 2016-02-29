@@ -15,16 +15,19 @@ export default class Search extends Component {
 
     handlePress(e) {
         var textValue = ReactDOM.findDOMNode(this.refs.editor).value;
+        ReactDOM.findDOMNode(this.refs.editor).placeholder = '';
         if (e.keyCode === 9) {
             this.setState({
                 tags: this.state.tags.concat([textValue])
             });
             ReactDOM.findDOMNode(this.refs.editor).value = '';
             this.props.actions.getEvents();
+
         }
     }
 
     addItem(item) {
+        ReactDOM.findDOMNode(this.refs.editor).placeholder = '';
         this.setState({
             tags: this.state.tags.concat([item])
         });
@@ -70,7 +73,7 @@ export default class Search extends Component {
                                 return <div className={tagTypeClass} key={i}>{tag}<span className="tag__cancel" onClick={() => this.removeItem(tag)}>x</span></div>
                             })}
 
-                            <input type="text" className="search__input" ref="editor" onKeyDown={this.handlePress.bind(this)} />
+                            <input type="text" className="search__input" ref="editor" onKeyDown={this.handlePress.bind(this)} placeholder="Enter or Select location, date, holiday type and activities"/>
                         </div>
 
                         <button className="search__button" onClick={(e) => this.handleSubmit(e)}>SEARCH</button>
