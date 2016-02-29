@@ -1,26 +1,31 @@
 .tag {
-    position: absolute;
-    top: 6px;
-    z-index: 1;
+
+    align-items: flex-start;
+    display: inline-block;
     color: #fff;
     cursor: pointer;
     padding: 0 0 0 13px;
     font-size: 16px;
     border-radius: 5px;
+    height: 43px;
+    margin: 6px 6px 0 12px;
+    text-transform: capitalize;
+    white-space: nowrap;
 
     &__location {
-        left: 15px;
         background: red;
     }
 
     &__date {
         background: #2196F3;
-        left: 170px;
     }
 
     &__holidaytype {
         background: #4CAF50;
-        left: 318px;
+    }
+
+    &__activity {
+        background: #FFAB00;
     }
 }
 
