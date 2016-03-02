@@ -1,7 +1,7 @@
 # tripz
-Prototype for events
 
+run commands in follow folders:
 
-server dir = json-server --watch db.json --static images
+/server > skiddle=APIKEY npm start
 
-root dir = npm start
+/root  > npm start
