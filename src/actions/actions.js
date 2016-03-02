@@ -1,5 +1,11 @@
 const serverEndPoint = 'http://localhost:3000';
 
+export function loading() {
+    return {
+        type: 'LOADING'
+    }
+}
+
 export function gotEvents(events) {
     return {
         type: 'GOT_EVENTS',
@@ -7,10 +13,12 @@ export function gotEvents(events) {
     }
 }
 
-export function showModal(card) {
+export function showModal(type, name, image, date, location, suitablefor, desc) {
     return {
         type: 'SHOW_MODAL',
-        card
+        card: {
+            type, name, image, date, location, suitablefor, desc
+        }
     }
 }
 
@@ -20,18 +28,23 @@ export function hideModal() {
     }
 }
 
-export function cardClick(id) {
-    return dispatch => {
-        fetchUtil(serverEndPoint+'/events?id=' + id).then((result)=> {
-            dispatch(showModal(result[0]));
-        });
-    };
-}
-
 export function getEvents() {
     return dispatch => {
-        fetchUtil(serverEndPoint+ '/events').then((result)=> {
-            dispatch(gotEvents(result.shuffle()));
+        dispatch(loading());
+        fetchUtil('http://localhost:3001/api/skiddle/events').then((resp)=> {
+            const mappedResult = resp.results.map((res, i) => {
+                return {
+                    'id': i,
+                    'type': res.venue.type,
+                    'name': res.eventname,
+                    'image': res.largeimageurl,
+                    'date': res.date,
+                    'location': res.venue.name + ', ' + res.venue.town,
+                    'suitablefor': 'Couples',
+                    'desc': res.description
+                }
+            });
+            dispatch(gotEvents(mappedResult));
         });
     };
 }
@@ -49,14 +62,14 @@ function fetchUtil(query) {
     });
 }
 
-Array.prototype.shuffle = function() {
-  var i = this.length, j, temp;
-  if ( i == 0 ) return this;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     temp = this[i];
-     this[i] = this[j];
-     this[j] = temp;
-  }
-  return this;
-}
+// Array.prototype.shuffle = function() {
+//   var i = this.length, j, temp;
+//   if ( i == 0 ) return this;
+//   while ( --i ) {
+//      j = Math.floor( Math.random() * ( i + 1 ) );
+//      temp = this[i];
+//      this[i] = this[j];
+//      this[j] = temp;
+//   }
+//   return this;
+// }

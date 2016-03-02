@@ -9,6 +9,7 @@ import Filter from './components/filter/filter';
 import classNames from 'classnames';
 import './styles/reset.scss'
 import './styles/main.scss'
+import './styles/preloader.scss'
 
 export default class App extends Component {
     componentDidMount() {
@@ -30,18 +31,22 @@ export default class App extends Component {
         return (
             <div>
                 <Search actions={actions} />
-
                 <div className="wrapper">
-                    <Filter />
-                    <div className="card__container">
-                        {events.map((eventDetails, i) => {
-                            return <Card {...eventDetails} actions={actions} key={i}/>;
-                        })}
-                    </div>
 
+                    {events.loading ?
+                        <div className="loader">Loading...</div>
+                    :
+                        <Filter /> &&
+                        <div className="card__container">
+                            {events.list.map((eventDetails, i) => {
+                                return <Card {...eventDetails} actions={actions} key={i}/>;
+                            })}
+                        </div>
+                    }
 
                     <div className={modalClass} onClick={()=> {actions.hideModal()}}>
-                        <Modal {...appState.card}/>
+
+                        {appState.card ? <Modal {...appState.card}/> : null }
                     </div>
                 </div>
             </div>

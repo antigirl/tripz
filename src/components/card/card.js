@@ -8,14 +8,13 @@ export default class Card extends Component {
         const truncateDesc = desc.substring(0, 100);
 
         const cardBgStyles = {
-            background: 'url(http://localhost:3000/' + image + ') 50% 50% / cover no-repeat'
+            background: 'url(' + image + ') 50% 50% / cover no-repeat'
         };
 
-        const cardTypeClass = classNames('card__type', type);
-
+        const cardTypeClass = classNames('card__type', type.toLowerCase());
 
         return (
-            <div className="card" onClick={() => actions.cardClick(id)}>
+            <div className="card" onClick={() => actions.showModal(type, name, image, date, location, suitablefor, desc)}>
                 <div className="card__image" style={cardBgStyles}>
                     <div className={cardTypeClass}>{type}</div>
                     <span className="card__fav"><img src="http://localhost:3000/heart.svg" width="15" /></span>
