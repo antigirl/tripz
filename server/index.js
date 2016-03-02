@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var request = require('request');
 var config  = require('./config.js');
-
+var cache = {};
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,13 +16,20 @@ app.get('/api/skiddle/events/:lat?/:long?/:radius?', function (req, res) {
     var endpoint = config.skiddle.endpoint + '/events/';
     var qs = {
         'api_key': config.skiddle.apikey,
-        'latitude': req.param.lat || 53.4667,
-        'longitude': req.param.long || -2.2333,
-        'radius': req.param.radius || 100
+        'latitude': req.params.lat,
+        'longitude': req.params.long,
+        'radius': req.params.radius || 100
     };
+
+    var cacheKey = '' + qs.latitude + qs.longitude;
+
+    if (cache[cacheKey]) {
+        return res.json(JSON.parse(cache[cacheKey]));
+    }
 
     request({url: endpoint, qs:qs}, function (err, resp, body) {
         if (!err && resp.statusCode === 200) {
+            cache[cacheKey] = body;
             res.json(JSON.parse(body));
         } else {
             res.json('error getting api data ', err)

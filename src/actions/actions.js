@@ -31,7 +31,7 @@ export function hideModal() {
 export function getEvents() {
     return dispatch => {
         dispatch(loading());
-        fetchUtil('http://localhost:3001/api/skiddle/events').then((resp)=> {
+        fetchUtil('http://localhost:3001/api/skiddle/events/53.4667/-2.2333').then((resp)=> {
             const mappedResult = resp.results.map((res, i) => {
                 return {
                     'id': i,
@@ -44,7 +44,7 @@ export function getEvents() {
                     'desc': res.description
                 }
             });
-            dispatch(gotEvents(mappedResult));
+            dispatch(gotEvents(mappedResult.shuffle()));
         });
     };
 }
@@ -62,14 +62,14 @@ function fetchUtil(query) {
     });
 }
 
-// Array.prototype.shuffle = function() {
-//   var i = this.length, j, temp;
-//   if ( i == 0 ) return this;
-//   while ( --i ) {
-//      j = Math.floor( Math.random() * ( i + 1 ) );
-//      temp = this[i];
-//      this[i] = this[j];
-//      this[j] = temp;
-//   }
-//   return this;
-// }
+Array.prototype.shuffle = function() {
+  var i = this.length, j, temp;
+  if ( i == 0 ) return this;
+  while ( --i ) {
+     j = Math.floor( Math.random() * ( i + 1 ) );
+     temp = this[i];
+     this[i] = this[j];
+     this[j] = temp;
+  }
+  return this;
+}
