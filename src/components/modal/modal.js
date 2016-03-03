@@ -6,7 +6,7 @@ export default class Modal extends Component {
     render() {
         const { type, name, image, date, location, suitablefor, desc, actions } = this.props;
         const cardBgStyles = {
-            background: 'url(' + image + ') 50% 50% repeat'
+            background: 'url(' + image + ') 50% 50% / cover no-repeat'
         };
 
         const mapStyles = {

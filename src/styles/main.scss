@@ -43,31 +43,23 @@ body {
 
 .card__type,
 .modal__type {
-    &.music, &.live {
-        background: rgba(27,155,254,.8);
-    }
-
-    &.nightclub {
-        background: rgba(248,11, 40, .8);
-    }
-
-    &.bar {
+    &.music {
         background: rgba(230,90,171,.8);
     }
 
-    &.food, &.hotel {
-        background: rgba(126,211,33,.8);
-    }
-
-    &.exhibition, &.theatre {
+    &.food {
         background: rgba(251,192,45,.9);
     }
 
-    &.culture, &.outdoor {
+    &.exhibition {
+        background: rgba(248,11, 40, .8);
+    }
+
+    &.culture {
         background: rgba(11, 169, 248, .8);
     }
 
-    &.comedy, &.gallery, &.sports {
+    &.comedy {
         background: rgba(11, 169, 48, .8);
     }
 }

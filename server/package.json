@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js & json-server --watch db.json --static images"
+    "start": "json-server --watch db.json --static images"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
-    "request": "^2.69.0"
   },
   "devDependencies": {
     "json-server": "^0.8.8"

@@ -30,21 +30,9 @@ export function hideModal() {
 
 export function getEvents() {
     return dispatch => {
-        dispatch(loading());
-        fetchUtil('http://localhost:3001/api/skiddle/events/53.4667/-2.2333').then((resp)=> {
-            const mappedResult = resp.results.map((res, i) => {
-                return {
-                    'id': i,
-                    'type': res.venue.type,
-                    'name': res.eventname,
-                    'image': res.largeimageurl,
-                    'date': res.date,
-                    'location': res.venue.name + ', ' + res.venue.town,
-                    'suitablefor': 'Couples',
-                    'desc': res.description
-                }
-            });
-            dispatch(gotEvents(mappedResult.shuffle()));
+        //dispatch(loading());
+        fetchUtil('http://localhost:3000/events').then((result)=> {
+            dispatch(gotEvents(result.shuffle()));
         });
     };
 }
