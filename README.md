@@ -1,7 +1,2 @@
 # tripz
-
-run commands in the following folders:
-
-/server > skiddle=APIKEY npm start
-
-/root  > npm start
+run npm start in server and root dir
