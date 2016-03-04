@@ -22,7 +22,6 @@
 
 .modal__header {
     color: #fff;
-    font-family: visuelt-lig,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 45px;
     font-weight: 300;
     line-height: 120%;
@@ -77,7 +76,6 @@
 .modal__buy {
     background: #EB5C4A;
     color: #FFFFFF;
-    font-family: visuelt-reg,"Helvetica Neue",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     font-size: 17px;
     padding: 20px 50px;
@@ -107,13 +105,12 @@
     color: #fff;
     border-radius: 2px;
     overflow: hidden;
-    font-family: visuelt-reg,"Helvetica Neue",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     line-height: 1;
     padding: 5px 7px;
-    z-index: 3;   
+    z-index: 3;
 }
 
 .modal__map {
