@@ -13,12 +13,12 @@ export default class Map extends Component {
                     zoom={14}
                 >
                 {this.props.events.map(function (event, index) {
-                    const { id, type, name, image, date, location, suitablefor, desc } = event;
+                    const { id, type, name, image, date, location, suitablefor, desc, coords } = event;
                     return <MapPin
                         key={index}
                         event={event}
-                        lat={event.coords.lat}
-                        lng={event.coords.lng}
+                        lat={coords.lat}
+                        lng={coords.lng}
                         onClick={() => actions.showModal(type, name, image, date, location, suitablefor, desc)}
                         />
                 })}
