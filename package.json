@@ -33,6 +33,7 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "express": "^4.13.4",
+    "google-map-react": "^0.10.5",
     "immutable": "^3.7.5",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
