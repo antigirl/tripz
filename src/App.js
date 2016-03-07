@@ -6,6 +6,7 @@ import Card from './components/card/card';
 import Modal from './components/modal/modal';
 import Search from './components/search/search';
 import Filter from './components/filter/filter';
+import Loader from './components/loader';
 import classNames from 'classnames';
 import './styles/reset.scss'
 import './styles/main.scss'
@@ -33,16 +34,14 @@ export default class App extends Component {
                 <Search actions={actions} />
                 <div className="wrapper">
 
-                    {events.loading ?
-                        <div className="loader">Loading...</div>
-                    :
-                        <Filter /> &&
-                        <div className="card__container">
-                            {events.list.map((eventDetails, i) => {
-                                return <Card {...eventDetails} actions={actions} key={i}/>;
-                            })}
-                        </div>
-                    }
+                    <Loader active={events.loading} />
+                    {!Boolean(events.loading) && <Filter />}
+
+                    <div className="card__container">
+                        {(events.list || []).map((eventDetails, i) => {
+                            return <Card {...eventDetails} actions={actions} key={i}/>;
+                        })}
+                    </div>
 
                     <div className={modalClass} onClick={()=> {actions.hideModal()}}>
 
