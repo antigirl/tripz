@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;
     border-radius: 10px 10px 0 0;
+    background: 50% 50% / cover no-repeat;
 
     &::after {
         background: linear-gradient(rgba(65,77,87,0),rgba(65,77,87,.7));

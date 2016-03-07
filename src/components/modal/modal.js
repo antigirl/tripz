@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
+import cs from 'classnames';
 import './modalstyle.scss';
 
 export default class Modal extends Component {
     render() {
         const { type, name, image, date, location, suitablefor, desc, actions } = this.props;
         const cardBgStyles = {
-            background: 'url(' + image + ') 50% 50% / cover no-repeat'
+            backgroundImage: `url(${image})`
         };
 
         const mapStyles = {
             background: 'url(http://localhost:3000/staticmap.png) 50% 50% / cover no-repeat'
         };
 
-        const cardTypeClass = classNames('modal__type', type.toLowerCase());
+        const cardTypeClass = cs('modal__type', type.toLowerCase());
 
         return (
             <div className="modal__body">

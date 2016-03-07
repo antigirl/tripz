@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actionCreators from './actions/actions';
-import Card from './components/card/card';
+import CardList from './components/CardList';
 import Modal from './components/modal/modal';
 import Search from './components/search/search';
 import Filter from './components/filter/filter';
 import Loader from './components/loader';
-import classNames from 'classnames';
+import cs from 'classnames';
 import './styles/reset.scss'
 import './styles/main.scss'
 import './styles/preloader.scss'
@@ -19,15 +19,6 @@ export default class App extends Component {
 
     render() {
         const { appState, events, actions} = this.props;
-        const modalClass = classNames('modal', {
-            'modal--show': appState.modal
-        });
-
-        if (appState.modal) {
-            document.body.classList.add('modal__open');
-        } else {
-            document.body.classList.remove('modal__open');
-        }
 
         return (
             <div>
@@ -37,15 +28,12 @@ export default class App extends Component {
                     <Loader active={events.loading} />
                     {!Boolean(events.loading) && <Filter />}
 
-                    <div className="card__container">
-                        {(events.list || []).map((eventDetails, i) => {
-                            return <Card {...eventDetails} actions={actions} key={i}/>;
-                        })}
-                    </div>
+                    <CardList cards={events.list} actions={actions} />
 
-                    <div className={modalClass} onClick={()=> {actions.hideModal()}}>
-
-                        {appState.card ? <Modal {...appState.card}/> : null }
+                    <div className={cs('modal', {
+                        'modal--show': appState.modal
+                    })} onClick={actions.hideModal}>
+                        {appState.card && <Modal {...appState.card}/>}
                     </div>
                 </div>
             </div>
