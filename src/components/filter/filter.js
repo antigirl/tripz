@@ -11,7 +11,7 @@ export default class Filter extends Component {
                     <li>SORT BY</li>
                 </ul>
 
-                <button className="filter__toggle">
+                <button className="filter__toggle" onClick={this.props.displayToggleAction}>
                     <img src="http://localhost:3000/map.svg" height="20"/>
                 </button>
             </div>

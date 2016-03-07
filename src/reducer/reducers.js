@@ -17,7 +17,7 @@ function eventsReducer(state={events:[], loading:true}, action) {
     }
 }
 
-function appStateReducer(state={}, action) {
+function appStateReducer(state={displayMode: 'cards'}, action) {
     switch (action.type) {
         case 'SHOW_MODAL':
         return Object.assign({}, state, {
@@ -28,6 +28,12 @@ function appStateReducer(state={}, action) {
         case 'HIDE_MODAL':
         return Object.assign({}, state, {
             modal: false
+        });
+
+        case 'DISPLAY_TOGGLE_CLICKED':
+        const displayMode = state.displayMode === 'map' ? 'cards' : 'map';
+        return Object.assign({}, state, {
+            displayMode
         });
 
         default:

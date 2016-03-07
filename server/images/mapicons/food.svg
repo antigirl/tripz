@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="53px" height="101px" viewBox="0 0 53 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>food</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="food" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <path d="M24.4,33.602 C24.382,36.835 21.423,40.313 17.588,40.313 L17.588,95.107 C17.587,102.91 6.981,102.91 6.965,95.107 L6.965,40.313 C3.243,40.313 -0.007,37.433 -2.66453526e-15,33.145 L-2.66453526e-15,2.951 C-0.007,0.33 3.787,0.229 3.812,3.053 L3.812,25.366 L6.965,25.366 L6.965,2.848 C6.965,0.441 10.617,0.285 10.626,2.951 L10.626,25.366 L13.877,25.366 L13.877,2.899 C13.901,0.36 17.45,0.259 17.435,3.001 L17.435,25.366 L20.69,25.366 L20.69,2.899 C20.678,0.386 24.385,0.284 24.401,3.001 L24.401,33.602 L24.4,33.602 L24.4,33.602 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M52.66,9.965 L52.66,95.107 C52.674,102.713 42.048,102.6 42.038,95.107 L42.038,61.304 L36.395,61.304 L36.395,9.965 C36.389,-1.988 52.674,-1.988 52.66,9.965 L52.66,9.965 L52.66,9.965 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

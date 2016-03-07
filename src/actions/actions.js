@@ -41,6 +41,12 @@ export function getEvents() {
     };
 }
 
+export function displayToggleClicked() {
+    return {
+        type: 'DISPLAY_TOGGLE_CLICKED'
+    }
+}
+
 function fetchUtil(query) {
     return new Promise((resolve, reject) => {
         fetch(query, {

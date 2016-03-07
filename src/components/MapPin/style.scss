@@ -1,0 +1,37 @@
+.map-pin {
+    height:50px;
+    width:50px;
+    border-radius:9999px;
+    position:relative;
+    cursor: pointer;
+
+    &.food {
+        background: rgb(251, 192, 45);
+    }
+
+    &.music {
+        background: rgb(230, 90, 171);
+    }
+
+    &.exhibition {
+        background: rgb(248, 11, 40);
+    }
+
+    &.comedy {
+        background: rgb(11, 169, 48);
+    }
+
+    &.culture {
+        background: rgb(11, 169, 248);
+    }
+}
+
+.map-pin img {
+    width: 12px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}

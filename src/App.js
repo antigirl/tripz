@@ -7,6 +7,7 @@ import Modal from './components/modal/modal';
 import Search from './components/search/search';
 import Filter from './components/filter/filter';
 import Loader from './components/loader';
+import Map from './components/map';
 import cs from 'classnames';
 import './styles/reset.scss'
 import './styles/main.scss'
@@ -26,9 +27,10 @@ export default class App extends Component {
                 <div className="wrapper">
 
                     <Loader active={events.loading} />
-                    {!Boolean(events.loading) && <Filter />}
+                    {!Boolean(events.loading) && <Filter displayToggleAction={this.props.actions.displayToggleClicked}/>}
 
-                    <CardList cards={events.list} actions={actions} />
+                    {this.props.appState.displayMode === 'cards' && <CardList cards={events.list} actions={actions} />}
+                    {this.props.appState.displayMode === 'map' && <Map actions={actions} events={events.list}/>}
 
                     <div className={cs('modal', {
                         'modal--show': appState.modal
