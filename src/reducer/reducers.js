@@ -1,7 +1,6 @@
 function eventsReducer(state={events:[], loading:true}, action) {
     switch (action.type) {
         case 'GOT_EVENTS':
-        console.log('action =>', action);
         return {
             loading: false,
             list: action.events

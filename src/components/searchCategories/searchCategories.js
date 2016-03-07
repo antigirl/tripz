@@ -14,6 +14,7 @@ export default class SearchCategories extends Component {
     addItem(type, e) {
         const itemsOnly = e.target.className !== 'search__options';
         const item = ReactDOM.findDOMNode(e.target).innerHTML.toLowerCase();
+
         if (itemsOnly) {
             this.props.addItemCallback(type, item);
         }

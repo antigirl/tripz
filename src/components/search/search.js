@@ -9,9 +9,11 @@ export default class Search extends Component {
     constructor(props) {
         super(props);
 
+        this.adults = 0;
+        this.activities = [];
         this.addItem = this.addItem.bind(this);
         this.state = {
-            tags: [],
+            tags: {}
         };
     }
 
@@ -19,10 +21,9 @@ export default class Search extends Component {
         this.inputDOMnode = ReactDOM.findDOMNode(this.refs.input);
 
         this.setState({
-            tags: [{
-                type: 'location',
-                val: 'Norwich'
-            }]
+            tags: {
+                location: 'Norwich'
+            }
         });
     }
 
@@ -45,20 +46,32 @@ export default class Search extends Component {
     }
 
     addItem(type, item) {
-        //this.inputDOMnode.placeholder = '';
+        let newItem = {[type]: item};
+
+        if (type === 'activity') {
+            this.activities = this.activities.concat([item]);
+            newItem = {'activity': this.activities };
+        }
+
         this.setState({
-            tags: this.state.tags.concat([{
-                type: type,
-                val: item
-            }])
+            tags: Object.assign({}, this.state.tags, newItem)
         });
+
         this.props.actions.getEvents();
     }
 
-    removeItem(tag) {
-        let index = this.state.tags.indexOf(tag);
+    removeItem(tag, type) {
+        let tempState =  Object.assign({}, this.state.tags);
+        if (tag === 'activity') {
+            let index = this.state.tags.activity.indexOf(type);
+            this.activities = this.activities.filter((_, i) => i !== index);
+            tempState =  Object.assign({}, this.state.tags, {'activity': this.activities});
+        } else {
+            delete tempState[tag];
+        }
+
         this.setState({
-            tags: this.state.tags.filter((_, i) => i !== index)
+            tags: tempState
         });
 
         this.props.actions.getEvents();
@@ -79,9 +92,14 @@ export default class Search extends Component {
                 <div className="search">
                     <form>
                         <div className="search__inputwrapper">
-                            {this.state.tags.map((tag, i)=> {
-                                const tagTypeClass = classNames('tag', 'tag__' + tag.type);
-                                return <div className={tagTypeClass} key={i}>{tag.val}<span className="tag__cancel" onClick={() => this.removeItem(tag)}>x</span></div>
+                            { Object.keys(this.state.tags).map((tag, i)=> {
+                                const tagTypeClass = classNames('tag', 'tag__' + tag);
+                                if (tag === 'activity') {
+                                    return this.state.tags.activity.map((theActivity, j) => {
+                                        return <div className={tagTypeClass} key={j}>{theActivity}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>x</span></div>
+                                    })
+                                }
+                                return <div className={tagTypeClass} key={i}>{this.state.tags[tag]}<span className="tag__cancel" onClick={() => this.removeItem(tag)}>x</span></div>
                             })}
 
                             <input type="text" className="search__input" ref="input" onKeyDown={this.handlePress.bind(this)} placeholder="Enter or Select location, date, holiday type and activities"/>
