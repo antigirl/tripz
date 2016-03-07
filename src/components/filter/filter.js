@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './filterstyle.scss';
 
+const iconToDisplayByViewMode = {
+    'cards': 'http://localhost:3000/map.svg',
+    'map': 'http://localhost:3000/grid.svg'
+};
+
 export default class Filter extends Component {
+
     render() {
         return(
             <div className="filters">
@@ -12,7 +18,7 @@ export default class Filter extends Component {
                 </ul>
 
                 <button className="filter__toggle" onClick={this.props.displayToggleAction}>
-                    <img src="http://localhost:3000/map.svg" height="20"/>
+                    <img src={iconToDisplayByViewMode[this.props.displayMode]} height="20"/>
                 </button>
             </div>
         )
