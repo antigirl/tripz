@@ -34,6 +34,9 @@ export default class Search extends Component {
             tags: {
                 location: {
                     text: 'Norwich'
+                },
+                date:  {
+                    text: 'This Weekend'
                 }
             }
         });
@@ -136,7 +139,9 @@ export default class Search extends Component {
         }
     }
 
+
     render() {
+        console.log(this.state)
         return(
             <header>
                 <div className="search">
