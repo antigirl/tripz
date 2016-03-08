@@ -9,7 +9,7 @@ export default class Map extends Component {
         return(
             <div className="map">
                 <GoogleMap
-                    center={{lat: 53.480759, lng: -2.242631}}
+                    center={{lat: 52.6305624, lng: 1.29728794}}
                     zoom={14}
                 >
                 {this.props.events.map(function (event, index) {
