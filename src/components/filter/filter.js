@@ -13,7 +13,7 @@ export default class Filter extends Component {
             <div className="filters">
                 <ul className="filter__list">
                     <li>WEATHER</li>
-                    <li>PRICE</li>
+                    <li>ONLY SHOW ME...</li>
                     <li>SORT BY</li>
                 </ul>
 

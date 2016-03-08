@@ -134,10 +134,10 @@ export default class Search extends Component {
                                 const tagTypeClass = classNames('tag', 'tag__' + tag);
                                 if (tag === 'activity') {
                                     return this.state.tags.activity.map((theActivity, j) => {
-                                        return <div className={tagTypeClass} key={j}>{theActivity.text}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>x</span></div>
+                                        return <div className={tagTypeClass} key={j}>{theActivity.text}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>&times;</span></div>
                                     })
                                 }
-                                return <div className={tagTypeClass} key={i}>{this.state.tags[tag].text}<span className="tag__cancel" onClick={() => this.removeItem(this.state.tags[tag], tag)}>x</span></div>
+                                return <div className={tagTypeClass} key={i}>{this.state.tags[tag].text}<span className="tag__cancel" onClick={() => this.removeItem(this.state.tags[tag], tag)}>&times;</span></div>
                             })}
 
                             <input type="text" className="search__input" ref="input" onKeyDown={this.handlePress.bind(this)} placeholder="Enter or Select location, date, holiday type and activities"/>
