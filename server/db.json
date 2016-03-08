@@ -6,7 +6,7 @@
       "name": "Live Jazz in Soho Members' Club",
       "image": "http://localhost:3000/music1.jpg",
       "date": "Wednesday 2 March, 6:00 PM",
-      "location": "GH Space, Soho",
+      "location": "Norwich",
       "coords": {
         "lat": 52.63817855,
         "lng": 1.27598316
@@ -20,7 +20,7 @@
       "name": "Jazz Nursery Aboard The Golden Hinde",
       "image": "http://localhost:3000/music2.jpg",
       "date": "Thursday 31 March, 7:30 PM",
-      "location": "The Golden Hinde, London Bridge",
+      "location": "Norwich",
       "coords": {
         "lat": 52.63186476,
         "lng": 1.27763271
@@ -34,7 +34,7 @@
       "name": "The Ultimate '80s Party Band",
       "image": "http://localhost:3000/music3.jpg",
       "date": "Friday 4 March, 7:00 PM",
-      "location": "Brooklyn Bowl London, North Greenwich",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62274743,
         "lng": 1.27746105
@@ -48,7 +48,7 @@
       "name": "London Symphony Orchestra Concert",
       "image": "http://localhost:3000/music4.jpg",
       "date": "Friday 14 March, 7:00 PM",
-      "location": "LSO St Luke's, Old Street",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62566518,
         "lng": 1.28801823
@@ -62,7 +62,7 @@
       "name": "Free From Food Festival 2016",
       "image": "http://localhost:3000/food1.jpg",
       "date": "Monday 30 May, 10:30 AM",
-      "location": "The Boiler House, Brick Lane",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62811386,
         "lng": 1.2954855
@@ -76,7 +76,7 @@
       "name": "British Beer + Food Matching Tasting",
       "image": "http://localhost:3000/music4.jpg",
       "date": "Tuesdat 31 May, 17:30 PM",
-      "location": "The Mitre, Greenwich",
+      "location": "Norwich",
       "coords": {
         "lat": 52.63441727,
         "lng": 1.29600048
@@ -90,7 +90,7 @@
       "name": "Steak + Lobster With £10 Bet",
       "image": "http://localhost:3000/food3.jpg",
       "date": "Monday 29 February, 6:00 PM",
-      "location": "The Grosvenor Victoria Casino, Marble Arch",
+      "location": "Norwich",
       "suitablefor": "family, couples",
       "coords": {
         "lat": 52.63186476,
@@ -104,7 +104,7 @@
       "name": "Orchid Festival",
       "image": "http://localhost:3000/culture1.jpg",
       "date": "Monday 18 April, 6:00 PM",
-      "location": "Kew Gardens, Richmond",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62285164,
         "lng": 1.300807
@@ -118,7 +118,7 @@
       "name": "Simon Munnery: And Nothing But",
       "image": "http://localhost:3000/comedy1.jpg",
       "date": "Monday 29 February, 8:45 PM",
-      "location": "Soho Theatre, Soho",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62780127,
         "lng": 1.31213665
@@ -132,7 +132,7 @@
       "name": "Chelsea Secret Wedding Fair",
       "image": "http://localhost:3000/exhibit3.jpg",
       "date": "Saturday 9 April, 11:00 AM + Other Dates",
-      "location": "Chelsea Old Town Hall, Chelsea",
+      "location": "Norwich",
       "coords": {
         "lat": 52.62212218,
         "lng": 1.30896091
@@ -146,7 +146,7 @@
       "name": "Bond In Motion",
       "image": "http://localhost:3000/exhibit2.jpg",
       "date": "Monday 29 February, 10:00 AM",
-      "location": "London Film Museum Covent Garden",
+      "location": "Norwich",
       "coords": {
         "lat": 52.6370738,
         "lng": 1.29497051
@@ -160,7 +160,7 @@
       "name": "Leonardo Da Vinci: The Mechanics Of Genius",
       "image": "http://localhost:3000/exhibit1.jpg",
       "date": "Monday 18 April, 6:00 PM",
-      "location": "Science Museum, South Kensington",
+      "location": "Norwich",
       "coords": {
         "lat": 52.63092706,
         "lng": 1.2887907
