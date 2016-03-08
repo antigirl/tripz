@@ -5,11 +5,11 @@ import cs from 'classnames';
 const occupancyOptions = [{
     text: '+1 Adult',
     key: 'adults',
-    singular: 'Adult',
+    singular: 'adult',
 }, {
     text: '+1 Child',
     key: 'children',
-    singular: 'Child',
+    singular: 'child',
 }];
 
 const dateOptions = [{

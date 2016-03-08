@@ -6,6 +6,12 @@ import SearchCategories from '../searchCategories/searchCategories';
 import './searchstyle.scss';
 import './tagstyle.scss';
 
+function titlecase(str) {
+    return str.replace(/(?:^(\w{1})| (\w{1}))/g, (a) => {
+        return a.toUpperCase();
+    });
+}
+
 export default class Search extends Component {
     constructor(props) {
         super(props);
@@ -52,7 +58,7 @@ export default class Search extends Component {
     }
 
     createOccupancyTag (item, count) {
-        return `${count} ${plur(item.singular, count)}`;
+        return titlecase(`${count} ${plur(item.singular, count)}`);
     }
 
     addItem(type, item) {
@@ -95,6 +101,7 @@ export default class Search extends Component {
 
     removeItem(tag, type) {
         let tempState =  Object.assign({}, this.state.tags);
+
         if (type === 'activity') {
             this.activities = this.activities.filter((_tag) => tag.text !== _tag.text);
 
