@@ -1,6 +1,6 @@
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: "Work Sans", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     background: #f1f1e9;
 
@@ -32,12 +32,11 @@ body {
 .modal__body {
     position: relative;
     width: 900px;
-    height: 100%;
     background: #fff;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    padding-bottom: 350px;
+    padding-bottom: 10px;
 }
 
 
