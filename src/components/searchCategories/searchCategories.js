@@ -50,6 +50,10 @@ const activitiesOptions = [{
     text: 'Tours'
 }];
 
+const typeOptions = [{
+    text: 'Romantic Break'
+}];
+
 export default class SearchCategories extends Component {
     constructor(props) {
         super(props)
@@ -110,6 +114,17 @@ export default class SearchCategories extends Component {
                         ))}
                     </ul> : null }
 
+                {this.state.activeCategory === 'type' ?
+                    <ul className="search__options">
+                        {typeOptions.map((option) => (
+                            <li
+                                key={option.text}
+                                className="tag__type"
+                                onClick={this.addItem.bind(this, 'type', option)}
+                            >{option.text}</li>
+                        ))}
+                    </ul> : null }
+
                 <ul className="search__categories">
                     <li className={cs({
                         active: activeCategory === 'occupancy'
@@ -120,6 +135,9 @@ export default class SearchCategories extends Component {
                     <li className={cs({
                         active: activeCategory === 'activities'
                     })} onClick={this.setCategory.bind(this, 'activities')}>Activities</li>
+                    <li className={cs({
+                        active: activeCategory === 'type'
+                    })} onClick={this.setCategory.bind(this, 'type')}>Type</li>
                 </ul>
             </div>
         );

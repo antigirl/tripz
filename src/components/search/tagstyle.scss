@@ -36,6 +36,16 @@
         }
     }
 
+    &__type {
+        background: #6153CC;
+
+        .tag__cancel {
+            &:hover {
+                background-color: darken(#6153CC, 7%);
+            }
+        }
+    }
+
     &__occupancy,
     &__occupancy-adults,
     &__occupancy-children {

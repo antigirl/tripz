@@ -72,6 +72,7 @@ form {
         cursor: pointer;
         transition: all 0.1s linear;
         position: relative;
+        border-left: 0;
 
         &.active {
             background-color: #f1f1e9;
@@ -80,7 +81,7 @@ form {
             &:before {
                 content: '';
                 left: 50%;
-                margin-left: -5px;
+                margin-left: -10px;
                 width: 0;
                 height: 0;
                 border-style: solid;
@@ -99,13 +100,12 @@ form {
         &:first-child {
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
-            border-right: 0;
+            border-left: 2px solid #f1f1e9;
         }
 
         &:last-child {
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
-            border-left: 0;
         }
     }
 }
