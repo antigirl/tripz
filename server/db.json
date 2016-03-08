@@ -7,6 +7,7 @@
       "image": "http://localhost:3000/music1.jpg",
       "date": "Wednesday 2 March, 6:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "0.1 mile",
       "coords": {
         "lat": 52.63817855,
         "lng": 1.27598316
@@ -21,6 +22,7 @@
       "image": "http://localhost:3000/music2.jpg",
       "date": "Thursday 31 March, 7:30 PM",
       "location": "Norwich",
+      "distanceFromHotel": "2 mile",
       "coords": {
         "lat": 52.63186476,
         "lng": 1.27763271
@@ -35,6 +37,7 @@
       "image": "http://localhost:3000/music3.jpg",
       "date": "Friday 4 March, 7:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "0.5 mile",
       "coords": {
         "lat": 52.62274743,
         "lng": 1.27746105
@@ -49,6 +52,7 @@
       "image": "http://localhost:3000/music4.jpg",
       "date": "Friday 14 March, 7:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "1.2 mile",
       "coords": {
         "lat": 52.62566518,
         "lng": 1.28801823
@@ -63,6 +67,7 @@
       "image": "http://localhost:3000/food1.jpg",
       "date": "Monday 30 May, 10:30 AM",
       "location": "Norwich",
+      "distanceFromHotel": "0.9 mile",
       "coords": {
         "lat": 52.62811386,
         "lng": 1.2954855
@@ -77,6 +82,7 @@
       "image": "http://localhost:3000/music4.jpg",
       "date": "Tuesdat 31 May, 17:30 PM",
       "location": "Norwich",
+      "distanceFromHotel": "4 mile",
       "coords": {
         "lat": 52.63441727,
         "lng": 1.29600048
@@ -91,6 +97,7 @@
       "image": "http://localhost:3000/food3.jpg",
       "date": "Monday 29 February, 6:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "0.2 mile",
       "suitablefor": "family, couples",
       "coords": {
         "lat": 52.63186476,
@@ -105,6 +112,7 @@
       "image": "http://localhost:3000/culture1.jpg",
       "date": "Monday 18 April, 6:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "3.1 mile",
       "coords": {
         "lat": 52.62285164,
         "lng": 1.300807
@@ -119,6 +127,7 @@
       "image": "http://localhost:3000/comedy1.jpg",
       "date": "Monday 29 February, 8:45 PM",
       "location": "Norwich",
+      "distanceFromHotel": "3.5 mile",
       "coords": {
         "lat": 52.62780127,
         "lng": 1.31213665
@@ -133,6 +142,7 @@
       "image": "http://localhost:3000/exhibit3.jpg",
       "date": "Saturday 9 April, 11:00 AM + Other Dates",
       "location": "Norwich",
+      "distanceFromHotel": "2 mile",
       "coords": {
         "lat": 52.62212218,
         "lng": 1.30896091
@@ -147,6 +157,7 @@
       "image": "http://localhost:3000/exhibit2.jpg",
       "date": "Monday 29 February, 10:00 AM",
       "location": "Norwich",
+      "distanceFromHotel": "5.5 mile",
       "coords": {
         "lat": 52.6370738,
         "lng": 1.29497051
@@ -161,6 +172,7 @@
       "image": "http://localhost:3000/exhibit1.jpg",
       "date": "Monday 18 April, 6:00 PM",
       "location": "Norwich",
+      "distanceFromHotel": "2.3 mile",
       "coords": {
         "lat": 52.63092706,
         "lng": 1.2887907

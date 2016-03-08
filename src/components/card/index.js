@@ -4,7 +4,7 @@ import './cardstyle.scss';
 
 export default class Card extends Component {
     render() {
-        const { id, type, name, image, date, location, suitablefor, desc, actions } = this.props;
+        const { id, type, name, image, date, location, suitablefor, desc, actions, distanceFromHotel } = this.props;
         const truncateDesc = desc.substring(0, 100);
 
         const cardBgStyles = {
@@ -14,7 +14,7 @@ export default class Card extends Component {
         const cardTypeClass = classNames('card__type', type.toLowerCase());
 
         return (
-            <div className="card" onClick={() => actions.showModal(type, name, image, date, location, suitablefor, desc)}>
+            <div className="card" onClick={() => actions.showModal(type, name, image, date, location, suitablefor, desc, distanceFromHotel)}>
                 <div className="card__image" style={cardBgStyles}>
                     <div className={cardTypeClass}>{type}</div>
                     <span className="card__fav"><img src="http://localhost:3000/heart.svg" width="15" /></span>

@@ -13,13 +13,13 @@ export function gotEvents(events) {
     }
 }
 
-export function showModal(type, name, image, date, location, suitablefor, desc) {
+export function showModal(type, name, image, date, location, suitablefor, desc, distanceFromHotel) {
     document.body.classList.add('modal__open');
 
     return {
         type: 'SHOW_MODAL',
         card: {
-            type, name, image, date, location, suitablefor, desc
+            type, name, image, date, location, suitablefor, desc, distanceFromHotel
         }
     }
 }

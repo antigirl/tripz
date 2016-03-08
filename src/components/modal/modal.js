@@ -4,7 +4,8 @@ import './modalstyle.scss';
 
 export default class Modal extends Component {
     render() {
-        const { type, name, image, date, location, suitablefor, desc, actions } = this.props;
+        const { type, name, image, date, location, suitablefor, desc, actions, distanceFromHotel} = this.props;
+        console.log(this.props)
         const cardBgStyles = {
             backgroundImage: `url(${image})`
         };
@@ -26,7 +27,7 @@ export default class Modal extends Component {
                 <div className="modal__content">
                     <ul className="modal__items">
                         <li> <span className="modal__items-icons"><img src="http://localhost:3000/calendar.svg" width="20" /></span> {date} </li>
-                        <li> <span className="modal__items-icons"><img src="http://localhost:3000/map.svg" height="20"/></span> {location} </li>
+                        <li> <span className="modal__items-icons"><img src="http://localhost:3000/map.svg" height="20"/></span> {location} - ({distanceFromHotel} from your hotel)</li>
                         <li className="modal__items-suitable"> <span className="modal__items-icons"><img src="http://localhost:3000/for.svg" height="20"/></span> {suitablefor} </li>
                     </ul>
 
