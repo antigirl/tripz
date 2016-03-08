@@ -109,7 +109,7 @@ export default class SearchCategories extends Component {
                             <li
                                 key={option.text}
                                 className="tag__activity"
-                                onClick={this.addItem.bind(this, 'activities', option)}
+                                onClick={this.addItem.bind(this, 'activity', option)}
                             >{option.text}</li>
                         ))}
                     </ul> : null }

@@ -75,9 +75,14 @@ export default class Search extends Component {
         }
 
         if (type === 'activity') {
-            this.activities = this.activities.concat([{
-                text: item
-            }]);
+            const dupe = (this.state.tags.activity || []).some((_item) => _item.text === item.text);
+
+            if (!dupe) {
+                this.activities = this.activities.concat([{
+                    text: item.text
+                }]);
+            }
+
             newItem = {'activity': this.activities };
         }
 
@@ -90,9 +95,9 @@ export default class Search extends Component {
 
     removeItem(tag, type) {
         let tempState =  Object.assign({}, this.state.tags);
-        if (tag === 'activity') {
-            let index = this.state.tags.activity.indexOf(type);
-            this.activities = this.activities.filter((_, i) => i !== index);
+        if (type === 'activity') {
+            this.activities = this.activities.filter((_tag) => tag.text !== _tag.text);
+
             tempState =  Object.assign({}, this.state.tags, {'activity': this.activities});
         } else if (type.indexOf('occupancy') > -1) {
             this.setState({
@@ -134,7 +139,7 @@ export default class Search extends Component {
                                 const tagTypeClass = classNames('tag', 'tag__' + tag);
                                 if (tag === 'activity') {
                                     return this.state.tags.activity.map((theActivity, j) => {
-                                        return <div className={tagTypeClass} key={j}>{theActivity.text}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>&times;</span></div>
+                                        return <div className={tagTypeClass} key={j}>{theActivity.text}<span className="tag__cancel" onClick={() => this.removeItem(theActivity, tag)}>&times;</span></div>
                                     })
                                 }
                                 return <div className={tagTypeClass} key={i}>{this.state.tags[tag].text}<span className="tag__cancel" onClick={() => this.removeItem(this.state.tags[tag], tag)}>&times;</span></div>
