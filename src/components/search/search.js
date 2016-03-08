@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import plur from 'plur';
 import SearchCategories from '../searchCategories/searchCategories';
 import './searchstyle.scss';
 import './tagstyle.scss';
@@ -9,11 +10,14 @@ export default class Search extends Component {
     constructor(props) {
         super(props);
 
-        this.adults = 0;
         this.activities = [];
+        this.adults = null;
+        this.children = null;
         this.addItem = this.addItem.bind(this);
         this.state = {
-            tags: {}
+            tags: {},
+            adults: 0,
+            children: 0
         };
     }
 
@@ -22,7 +26,9 @@ export default class Search extends Component {
 
         this.setState({
             tags: {
-                location: 'Norwich'
+                location: {
+                    text: 'Norwich'
+                }
             }
         });
     }
@@ -45,11 +51,33 @@ export default class Search extends Component {
         // }
     }
 
+    createOccupancyTag (item, count) {
+        return `${count} ${plur(item.singular, count)}`;
+    }
+
     addItem(type, item) {
-        let newItem = {[type]: item};
+        let newItem = {[type]: {
+            text: item.text
+        }};
+
+        if (type === 'occupancy') {
+            newItem = {
+                [`${type}-${item.key}`]: {
+                    text: this.createOccupancyTag(item, this.state[item.key] + 1),
+                    key: item.key,
+                    singular: item.singular
+                }
+            };
+
+            this.setState({
+                [item.key]: ++this.state[item.key]
+            });
+        }
 
         if (type === 'activity') {
-            this.activities = this.activities.concat([item]);
+            this.activities = this.activities.concat([{
+                text: item
+            }]);
             newItem = {'activity': this.activities };
         }
 
@@ -66,8 +94,18 @@ export default class Search extends Component {
             let index = this.state.tags.activity.indexOf(type);
             this.activities = this.activities.filter((_, i) => i !== index);
             tempState =  Object.assign({}, this.state.tags, {'activity': this.activities});
+        } else if (type.indexOf('occupancy') > -1) {
+            this.setState({
+                [type]: --this.state[tag.key]
+            }, () => {
+                if (this.state[tag.key] === 0) {
+                    delete tempState[type];
+                } else {
+                    tempState[type].text = this.createOccupancyTag(tag, this.state[tag.key]);
+                }
+            });
         } else {
-            delete tempState[tag];
+            delete tempState[type];
         }
 
         this.setState({
@@ -96,10 +134,10 @@ export default class Search extends Component {
                                 const tagTypeClass = classNames('tag', 'tag__' + tag);
                                 if (tag === 'activity') {
                                     return this.state.tags.activity.map((theActivity, j) => {
-                                        return <div className={tagTypeClass} key={j}>{theActivity}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>x</span></div>
+                                        return <div className={tagTypeClass} key={j}>{theActivity.text}<span className="tag__cancel" onClick={() => this.removeItem(tag, theActivity)}>x</span></div>
                                     })
                                 }
-                                return <div className={tagTypeClass} key={i}>{this.state.tags[tag]}<span className="tag__cancel" onClick={() => this.removeItem(tag)}>x</span></div>
+                                return <div className={tagTypeClass} key={i}>{this.state.tags[tag].text}<span className="tag__cancel" onClick={() => this.removeItem(this.state.tags[tag], tag)}>x</span></div>
                             })}
 
                             <input type="text" className="search__input" ref="input" onKeyDown={this.handlePress.bind(this)} placeholder="Enter or Select location, date, holiday type and activities"/>

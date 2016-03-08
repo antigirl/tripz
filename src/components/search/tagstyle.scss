@@ -19,11 +19,14 @@
         background: #2196F3;
     }
 
-    &__occupancy {
+    &__occupancy,
+    &__occupancy-adults,
+    &__occupancy-children {
         background: #4CAF50;
     }
 
-    &__activity {
+    &__activity,
+    &__activities {
         background: #FFAB00;
     }
 }
