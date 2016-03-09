@@ -97,7 +97,7 @@
     cursor: pointer;
     position: absolute;
     top: 30px;
-    right: 20px;
+    right: 138px;
     transition-duration: 0.3s;
     transition-property: color, background-color;
 
@@ -108,8 +108,13 @@
 
 .modal__notbuy {
     background-color: #2098d1;
-    padding: 20px 42px;
-    right: 250px;
+    padding: 11px 0px;
+    line-height: 1.4;
+    width: 98px;
+    text-align: center;
+    right: 26px;
+    word-wrap: break-word;
+    font-size: 14px;
 }
 
 .modal__type {
