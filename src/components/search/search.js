@@ -157,7 +157,7 @@ export default class Search extends Component {
                                 return <div className={tagTypeClass} key={i}>{this.state.tags[tag].text}<span className="tag__cancel" onClick={() => this.removeItem(this.state.tags[tag], tag)}>&times;</span></div>
                             })}
 
-                            <input type="text" className="search__input" ref="input" onKeyDown={this.handlePress.bind(this)} placeholder="Enter or select a destination, date, holiday type and activities"/>
+                            <input type="text" className="search__input" ref="input" onKeyDown={this.handlePress.bind(this)} placeholder="Select or Modify Occupancy, Dates and Activities"/>
                         </div>
                         <button className="search__button" onClick={(e) => this.handleSubmit(e)}>SEARCH</button>
                     </form>
