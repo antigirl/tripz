@@ -54,7 +54,6 @@ function fetchUtil(query) {
         }).then((response) => response.json()).then((result) => {
             resolve(result);
         }).catch((err) => {
-            console.log('error from feed ', err);
             reject(err);
         });
     });

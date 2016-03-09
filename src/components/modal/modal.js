@@ -5,7 +5,6 @@ import './modalstyle.scss';
 export default class Modal extends Component {
     render() {
         const { type, name, image, date, location, suitablefor, desc, actions, distanceFromHotel} = this.props;
-        console.log(this.props)
         const cardBgStyles = {
             backgroundImage: `url(${image})`
         };

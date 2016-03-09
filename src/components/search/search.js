@@ -141,7 +141,6 @@ export default class Search extends Component {
 
 
     render() {
-        console.log(this.state)
         return(
             <header>
                 <div className="search">
