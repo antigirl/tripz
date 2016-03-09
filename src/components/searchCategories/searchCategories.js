@@ -155,11 +155,13 @@ export default class SearchCategories extends Component {
                     <li className={cs({
                         active: activeCategory === 'activities'
                     })} onClick={this.setCategory.bind(this, 'activities')}>Activities</li>
-                    <li className={cs({
-                        active: activeCategory === 'type'
-                    })} onClick={this.setCategory.bind(this, 'type')}>Type</li>
                 </ul>
             </div>
         );
     }
 }
+/*
+<li className={cs({
+    active: activeCategory === 'type'
+})} onClick={this.setCategory.bind(this, 'type')}>Type</li>
+*/

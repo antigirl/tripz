@@ -1,10 +1,10 @@
 .filters {
     margin-top: 30px;
     display: flex;
+    justify-content: space-between
 }
 
 .filter__list {
-    align-items: flex-start;
     width: 90%;
 
     li {
@@ -37,12 +37,10 @@
 }
 
 .filter__toggle {
-    align-items: flex-end;
     display: inline-block;
     background: #fff;
     border: 0;
     width: 60px;
     outline: 0;
-    margin-left: 45px;
     cursor: pointer;
 }
