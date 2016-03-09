@@ -32,6 +32,7 @@ export default class Modal extends Component {
                     </ul>
 
                     <button className="modal__buy"> GET TICKETS</button>
+                    <button className="modal__notbuy"> + BUCKETLIST</button>
 
                     <div className="modal__desc">
                         {desc}

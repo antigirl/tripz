@@ -78,6 +78,14 @@ export default class SearchCategories extends Component {
             activeCategory
         } = this.state;
 
+        let {
+            activity = [],
+            date = {},
+            type = {}
+        } = this.props.tags;
+
+        activity = activity.map((item) => item.text);
+
         return (
             <div className="search__catWrapper">
                 {this.state.activeCategory === 'occupancy' ?
@@ -94,10 +102,14 @@ export default class SearchCategories extends Component {
 
                 {this.state.activeCategory === 'dates' ?
                     <ul className="search__options">
-                        {dateOptions.map((option) => (
+                        {dateOptions.map((item) => Object.assign({}, item, {
+                            inactive: date.text === item.text
+                        })).map((option) => (
                             <li
                                 key={option.text}
-                                className="tag__date"
+                                className={cs('tag__date', {
+                                    inactive: option.inactive
+                                })}
                                 onClick={this.addItem.bind(this, 'date', option)}
                             >{option.text}</li>
                         ))}
@@ -105,10 +117,14 @@ export default class SearchCategories extends Component {
 
                 {this.state.activeCategory === 'activities' ?
                     <ul className="search__options">
-                        {activitiesOptions.map((option) => (
+                        {activitiesOptions.map((item) => Object.assign({}, item, {
+                            inactive: activity.indexOf(item.text) > -1
+                        })).map((option) => (
                             <li
                                 key={option.text}
-                                className="tag__activity"
+                                className={cs('tag__activity', {
+                                    inactive: option.inactive
+                                })}
                                 onClick={this.addItem.bind(this, 'activity', option)}
                             >{option.text}</li>
                         ))}
@@ -116,10 +132,14 @@ export default class SearchCategories extends Component {
 
                 {this.state.activeCategory === 'type' ?
                     <ul className="search__options">
-                        {typeOptions.map((option) => (
+                        {typeOptions.map((item) => Object.assign({}, item, {
+                            inactive: type.text === item.text
+                        })).map((option) => (
                             <li
                                 key={option.text}
-                                className="tag__type"
+                                className={cs('tag__type', {
+                                    inactive: option.inactive
+                                })}
                                 onClick={this.addItem.bind(this, 'type', option)}
                             >{option.text}</li>
                         ))}

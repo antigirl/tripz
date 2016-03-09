@@ -162,7 +162,7 @@ export default class Search extends Component {
                         <button className="search__button" onClick={(e) => this.handleSubmit(e)}>SEARCH</button>
                     </form>
                 </div>
-                <SearchCategories addItemCallback={this.addItem}/>
+                <SearchCategories addItemCallback={this.addItem} tags={this.state.tags}/>
             </header>
         )
     }

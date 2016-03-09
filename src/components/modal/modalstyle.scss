@@ -51,6 +51,13 @@
     cursor: pointer;
 
     &:hover {
+        animation: beat 1s infinite alternate;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes beat {
+    to {
         transform: scale(1.3);
     }
 }
@@ -74,7 +81,8 @@
     text-align: center;
 }
 
-.modal__buy {
+.modal__buy,
+.modal__notbuy {
     background: #EB5C4A;
     color: #FFFFFF;
     letter-spacing: 1px;
@@ -96,6 +104,12 @@
     &:hover {
         background-color: #2098d1;
     }
+}
+
+.modal__notbuy {
+    background-color: #2098d1;
+    padding: 20px 42px;
+    right: 250px;
 }
 
 .modal__type {

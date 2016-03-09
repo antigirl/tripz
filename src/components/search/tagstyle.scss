@@ -24,6 +24,11 @@
                     background-color: darken(red, 7%);
             }
         }
+
+        &.inactive {
+            background-color: #ebebeb !important;
+            color: #ebebeb !important;
+        }
     }
 
     &__date {
@@ -34,6 +39,11 @@
                 background-color: darken(#2196F3, 7%);
             }
         }
+
+        &.inactive {
+            background-color: #ebebeb !important;
+            color: #ebebeb !important;
+        }
     }
 
     &__type {
@@ -43,6 +53,11 @@
             &:hover {
                 background-color: darken(#6153CC, 7%);
             }
+        }
+
+        &.inactive {
+            background-color: #ebebeb !important;
+            color: #ebebeb !important;
         }
     }
 
@@ -66,6 +81,11 @@
             &:hover {
                 background-color: darken(#FFAB00, 7%);
             }
+        }
+
+        &.inactive {
+            background-color: #ebebeb !important;
+            color: #ebebeb !important;
         }
     }
 }
