@@ -84,15 +84,17 @@ export default class Search extends Component {
         }
 
         if (type === 'activity') {
-            const dupe = (this.state.tags.activity || []).some((_item) => _item.text === item.text);
-
-            if (!dupe) {
-                this.activities = this.activities.concat([{
-                    text: item.text
-                }]);
+            if (this.activities.length < 3) {
+                const dupe = (this.state.tags.activity || []).some((_item) => _item.text === item.text);
+                if (!dupe) {
+                    this.activities = this.activities.concat([{
+                        text: item.text
+                    }]);
+                }
+                newItem = {'activity': this.activities };
+            } else {
+                newItem = {'activity' : this.activities }
             }
-
-            newItem = {'activity': this.activities };
         }
 
         this.setState({
