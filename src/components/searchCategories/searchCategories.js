@@ -29,25 +29,13 @@ const dateOptions = [{
 const activitiesOptions = [{
     text: 'Music'
 }, {
-    text: 'Eating'
+    text: 'Food'
+}, {
+    text: 'Exhibition'
+}, {
+    text: 'Comedy'
 }, {
     text: 'Culture'
-}, {
-    text: 'Outdoors'
-}, {
-    text: 'Indoors'
-}, {
-    text: 'Family'
-}, {
-    text: 'Romantic'
-}, {
-    text: 'Sight seeing'
-}, {
-    text: 'Shopping'
-}, {
-    text: 'Night Life'
-}, {
-    text: 'Tours'
 }];
 
 const typeOptions = [{

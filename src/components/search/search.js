@@ -129,7 +129,7 @@ export default class Search extends Component {
         e.preventDefault();
         e.stopPropagation();
 
-        if (this.props.tags.length) {
+        if (Object.keys(this.props.tags).length) {
             this.props.actions.getEvents();
         }
     }
