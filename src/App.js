@@ -57,14 +57,16 @@ export default class App extends Component {
 
         return (
             <div>
-                <Search actions={actions} tags={this.props.appState.tags}/>
+                <Search actions={actions} tags={appState.tags}/>
                 <div className="wrapper">
 
                     <Loader active={events.loading} />
-                    {!Boolean(events.loading) && <Filter displayMode={this.props.appState.displayMode} displayToggleAction={this.props.actions.displayToggleClicked}/>}
+                    {!Boolean(events.loading) && <Filter displayMode={appState.displayMode} displayToggleAction={actions.displayToggleClicked} showViewModeToggle={Boolean(appState.tags.location)}/>}
 
-                    {this.props.appState.displayMode === 'cards' && <CardList cards={events.list} actions={actions} />}
-                    {this.props.appState.displayMode === 'map' && <Map actions={actions} events={events.list}/>}
+                    {(appState.displayMode === 'cards' && appState.tags.location) && <CardList tags={appState.tags} cards={events.list} actions={actions} />}
+                    {(appState.displayMode === 'map' && appState.tags.location) && <Map actions={actions} events={events.list}/>}
+
+                    {!appState.tags.location && <LocationList actions={actions} locations={locations} />}
 
                     <div className={cs('modal', {
                         'modal--show': appState.modal

@@ -4,9 +4,8 @@ import './style.scss';
 export default class LocationList extends Component {
     render() {
         const {image} = this.props.locationData;
-
         return(
-            <div className="location">
+            <div className="location" onClick={() => this.props.actions.setLocationTag({location: {text: this.props.locationData.name}})}>
                 <div className="location__image">
                     <img src={this.props.locationData.image} />
                     <div className="location__image__name">{this.props.locationData.name}</div>

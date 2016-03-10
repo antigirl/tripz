@@ -18,7 +18,7 @@ const CardList = React.createClass({
         return (
             <div className="card-list">
                 {cards.map((cardDetails, i) => {
-                    return <Card {...cardDetails} actions={actions} key={i}/>;
+                    return <Card {...cardDetails} tags={this.props.tags} actions={actions} key={i}/>;
                 })}
             </div>
         );

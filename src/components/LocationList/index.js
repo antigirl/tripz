@@ -8,7 +8,7 @@ export default class LocationList extends Component {
         return(
             <div>
                 {this.props.locations.map((location, index) => {
-                    return <Location key={index} locationData={location} />
+                    return <Location actions={this.props.actions} key={index} locationData={location} />
                 })}
             </div>
         )

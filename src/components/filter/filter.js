@@ -16,10 +16,11 @@ export default class Filter extends Component {
                     <li>ONLY SHOW ME...</li>
                     <li>SORT BY</li>
                 </ul>
-
+                {this.props.showViewModeToggle ?
                 <button className="filter__toggle" onClick={this.props.displayToggleAction}>
                     <img src={iconToDisplayByViewMode[this.props.displayMode]} height="20"/>
                 </button>
+                : ''}
             </div>
         )
     }

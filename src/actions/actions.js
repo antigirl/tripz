@@ -20,6 +20,13 @@ export function setTags(tags) {
     }
 }
 
+export function setLocationTag(location) {
+    return {
+        type: 'SET_LOCATION_TAG',
+        location: location
+    }
+}
+
 export function showModal(type, name, image, date, location, suitablefor, desc, distanceFromHotel) {
     document.body.classList.add('modal__open');
 

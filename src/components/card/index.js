@@ -28,7 +28,7 @@ export default class Card extends Component {
 
                     <ul className="card__footer">
                         <li> <span className="card__footericons"><img src="http://localhost:3000/calendar.svg" width="12" /></span> {date} </li>
-                        <li> <span className="card__footericons"><img src="http://localhost:3000/map.svg" height="12"/></span> {location} </li>
+                        <li> <span className="card__footericons"><img src="http://localhost:3000/map.svg" height="12"/></span> {this.props.tags.location.text} </li>
                     </ul>
                 </div>
             </div>
