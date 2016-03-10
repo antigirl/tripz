@@ -14,6 +14,13 @@ export function gotEvents(events) {
     }
 }
 
+export function gotLocations(locations) {
+    return {
+        type: 'GOT_LOCATIONS',
+        locations: locations
+    }
+}
+
 export function setTags(tags) {
     return {
         type: 'SET_TAGS',
@@ -61,6 +68,14 @@ export function getEvents(activities) {
         //dispatch(loading());
         fetchUtil(serverEndPoint + '/events' + query).then((result)=> {
             dispatch(gotEvents(result.shuffle()));
+        });
+    };
+}
+
+export function getLocations() {
+    return dispatch => {
+        fetchUtil(serverEndPoint + '/locations').then((result)=> {
+            dispatch(gotLocations(result));
         });
     };
 }

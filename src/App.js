@@ -16,36 +16,6 @@ import './styles/reset.scss'
 import './styles/main.scss'
 import './styles/preloader.scss'
 
-const locations = [
-    {
-        name: 'Bath',
-        image: 'http://localhost:3000/locations/bath.jpg',
-        whyVisit: 'Roman baths, Georgian architecture, Jane Austen Centre, The Royal Crescent, afternoon tea, thermal spas.'
-    },
-    {
-        name: 'York',
-        image: 'http://localhost:3000/locations/york.jpg',
-        whyVisit: 'Castle Howard, York Minster, old fortifications and Gothic architecture, haunted legends, streets like a labyrinth.'
-    },
-    {
-        name: 'Bristol',
-        image: 'http://localhost:3000/locations/bristol.jpg',
-        whyVisit: 'The Docks, Clifton Bridge, trip-hop, electronica, art collectives, Banksy pieces, industrial pasts.'
-    },{
-        name: 'London',
-        image: 'http://localhost:3000/locations/london.jpg',
-        whyVisit: 'Pub culture, tea culture, the royal family, Big Ben, Shakespeare, wry humour, theatre, fashion and finance, fish and chips, Tate Modern, the Tube, the gap.'
-    }, {
-        name: 'Edinburgh',
-        image: 'http://localhost:3000/locations/edinburgh.jpg',
-        whyVisit: 'Arthur\'s Seat, cutting-edge theatre, mystical fog, stunning cliff-faces, spooky stories, tall spires, underground pubs, and whisky.'
-    }, {
-        name: 'Brighton',
-        image: 'http://localhost:3000/locations/brighton.jpg',
-        whyVisit: 'The Lanes, London-by-the-sea, Brighton Pier, LGBTQ culture, independent cafes, cute boutiques, vintage shops, pebble beaches.'
-    }
-]
-
 export default class App extends Component {
 
     constructor(props) {
@@ -59,10 +29,11 @@ export default class App extends Component {
 
     componentDidMount() {
         this.props.actions.getEvents();
+        this.props.actions.getLocations();
     }
 
     render() {
-        const { appState, events, actions} = this.props;
+        const { appState, events, actions, locations } = this.props;
 
         return (
             <div>
@@ -75,7 +46,7 @@ export default class App extends Component {
                     {(appState.displayMode === 'cards' && appState.tags.location) && <CardList tags={appState.tags} cards={events.list} actions={actions} />}
                     {(appState.displayMode === 'map' && appState.tags.location) && <Map actions={actions} events={events.list}/>}
 
-                    {!appState.tags.location && <LocationList actions={actions} locations={locations} />}
+                    {!appState.tags.location && <LocationList actions={actions} locations={locations.list} />}
 
                     <div className={cs('modal', {
                         'modal--show': appState.modal
@@ -91,6 +62,7 @@ export default class App extends Component {
 function mapStateToProps(state) {
   return {
       events: state.events,
+      locations: state.locations,
       appState: state.appState
   };
 }

@@ -10,6 +10,18 @@ const initialAppState = {
     }
 };
 
+function locationsReducer(state={locations:[]}, action) {
+    switch (action.type) {
+        case 'GOT_LOCATIONS':
+        return {
+            list: action.locations
+        };
+
+        default:
+        return state;
+    }
+}
+
 function eventsReducer(state={events:[], loading:true}, action) {
     switch (action.type) {
         case 'GOT_EVENTS':
@@ -65,6 +77,7 @@ function appStateReducer(state = initialAppState, action) {
 export default function trips(state={}, action) {
     return {
         events: eventsReducer(state.events, action),
+        locations: locationsReducer(state.locations, action),
         appState: appStateReducer(state.appState, action)
     }
 }

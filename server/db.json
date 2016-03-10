@@ -180,5 +180,37 @@
       "suitablefor": "family, friends, couples",
       "desc": "Now modern audiences will be able to enter the mind of the young Leonardo da Vinci as an engineer and inventor too...expected to be one of the most popular exhibitions of 2016' - Leonardo da Vinci: The Mechanics of Genius is the internationally-acclaimed, must-see exhibition of 2016. It's your chance to investigate both the facts and the misconceptions that surround this great genius of the Renaissance: Was he the period's only designer of machines? Did all of his designs get fully constructed? Find out the answers to these questions and many others at a unique exhibition of remarkable prescience, rare beauty and astonishing creativity."
     }
+  ],
+  "locations": [
+    {
+      "name": "Bath",
+      "image": "http://localhost:3000/locations/bath.jpg",
+      "whyVisit": "Roman baths, Georgian architecture, Jane Austen Centre, The Royal Crescent, afternoon tea, thermal spas"
+    },
+    {
+      "name": "York",
+      "image": "http://localhost:3000/locations/york.jpg",
+      "whyVisit": "Castle Howard, York Minster, old fortifications and Gothic architecture, haunted legends, streets like a labyrinth"
+    },
+    {
+      "name": "Bristol",
+      "image": "http://localhost:3000/locations/bristol.jpg",
+      "whyVisit": "The Docks, Clifton Bridge, trip-hop, electronica, art collectives, Banksy pieces, industrial pasts"
+    },
+    {
+      "name": "London",
+      "image": "http://localhost:3000/locations/london.jpg",
+      "whyVisit": "Pub culture, tea culture, the royal family, Big Ben, Shakespeare, wry humour, theatre, fashion and finance, fish and chips, Tate Modern, the Tube, the gap"
+    },
+    {
+      "name": "Edinburgh",
+      "image": "http://localhost:3000/locations/edinburgh.jpg",
+      "whyVisit": "Arthurs Seat, cutting-edge theatre, mystical fog, stunning cliff-faces, spooky stories, tall spires, underground pubs, and whisky"
+    },
+    {
+      "name": "Brighton",
+      "image": "http://localhost:3000/locations/brighton.jpg",
+      "whyVisit": "The Lanes, London-by-the-sea, Brighton Pier, LGBTQ culture, independent cafes, cute boutiques, vintage shops, pebble beaches"
+    }
   ]
 }
