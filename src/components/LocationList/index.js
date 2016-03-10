@@ -6,7 +6,7 @@ import './style.scss';
 export default class LocationList extends Component {
     render() {
         return(
-            <div>
+            <div className="location-list">
                 {this.props.locations.map((location, index) => {
                     return <Location actions={this.props.actions} key={index} locationData={location} />
                 })}

@@ -1,12 +1,12 @@
 .location {
     width: 400px;
     position: relative;
-    margin: 15px 15px 0 0;
     display: inline-block;
     border-radius: 4px;
     cursor: pointer;
     background: #fff;
     color: #404d57;
+    margin-top: 15px;
 
     &:nth-child(3n+3) {
         margin-right: 0;
@@ -79,11 +79,11 @@
 }
 .location__desc {
     display: block;
-    margin-top: 10px;
     line-height: 1.2;
 
     &__title {
         font-weight:bold;
+        padding-bottom: 5px;
     }
 }
 
