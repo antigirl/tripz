@@ -47,13 +47,22 @@ const locations = [
 ]
 
 export default class App extends Component {
+
+    constructor(props) {
+        super(props);
+        const queryStrings = qs.parse(window.location.search.replace('?', ''));
+        if (queryStrings.noFilters) {
+            this.props.actions.setTags({});
+        }
+
+    }
+
     componentDidMount() {
         this.props.actions.getEvents();
     }
 
     render() {
         const { appState, events, actions} = this.props;
-        const queryStrings = qs.parse(window.location.search.replace('?', ''));
 
         return (
             <div>
