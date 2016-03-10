@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
 import './style.scss';
-import MapPin from '../MapPin';
+import MapPin from '../mapPin';
 
 export default class Map extends Component {
     render() {

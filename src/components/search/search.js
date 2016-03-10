@@ -31,24 +31,6 @@ export default class Search extends Component {
         this.inputDOMnode = ReactDOM.findDOMNode(this.refs.input);
     }
 
-    handlePress(e) {
-        e.preventDefault();
-        // var textValue = this.inputDOMnode.value;
-        // this.inputDOMnode.placeholder = '';
-        // if (e.keyCode === 9) {
-        //     this.setState({
-        //         tags: this.props.tags.concat([{
-        //             type: 'activity',
-        //             val: textValue
-        //         }])
-        //     });
-        //     this.inputDOMnode.value = '';
-        //     this.inputDOMnode.focus();
-        //     this.props.actions.getEvents();
-        //
-        // }
-    }
-
     createOccupancyTag (item, count) {
         return titlecase(`${count} ${plur(item.singular, count)}`);
     }
@@ -133,6 +115,17 @@ export default class Search extends Component {
         }
     }
 
+    handlePress(e) {
+        e.preventDefault();
+        // var textValue = this.inputDOMnode.value;
+        // this.inputDOMnode.placeholder = '';
+        // if (e.keyCode === 9) { this.setState({
+        //         tags: this.props.tags.concat([{
+        //         type: 'activity',val: textValue}])});
+        //     this.inputDOMnode.value = '';
+        //     this.inputDOMnode.focus();
+        //     this.props.actions.getEvents();}
+    }
 
     render() {
         return(

@@ -51,8 +51,10 @@ export default class SearchCategories extends Component {
         };
     }
 
-    addItem(type, item, e) {
-        this.props.addItemCallback(type, item);
+    addItem(type, item, isInActive, e) {
+        if (!isInActive) {
+            this.props.addItemCallback(type, item);
+        }
     }
 
     setCategory(category, e) {
@@ -82,7 +84,7 @@ export default class SearchCategories extends Component {
                             <li
                                 key={option.text}
                                 className="tag__occupancy"
-                                onClick={this.addItem.bind(this, 'occupancy', option)}
+                                onClick={this.addItem.bind(this, 'occupancy', option, false)}
                             >{option.text}</li>
                         ))}
                     </ul> : null }
@@ -98,7 +100,7 @@ export default class SearchCategories extends Component {
                                 className={cs('tag__date', {
                                     inactive: option.inactive
                                 })}
-                                onClick={this.addItem.bind(this, 'date', option)}
+                                onClick={this.addItem.bind(this, 'date', option, false)}
                             >{option.text}</li>
                         ))}
                     </ul> : null }
@@ -113,7 +115,7 @@ export default class SearchCategories extends Component {
                                 className={cs('tag__activity', {
                                     inactive: option.inactive
                                 })}
-                                onClick={this.addItem.bind(this, 'activity', option)}
+                                onClick={this.addItem.bind(this, 'activity', option, option.inactive)}
                             >{option.text}</li>
                         ))}
                     </ul> : null }
@@ -128,7 +130,7 @@ export default class SearchCategories extends Component {
                                 className={cs('tag__type', {
                                     inactive: option.inactive
                                 })}
-                                onClick={this.addItem.bind(this, 'type', option)}
+                                onClick={this.addItem.bind(this, 'type', option, false)}
                             >{option.text}</li>
                         ))}
                     </ul> : null }

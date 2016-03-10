@@ -48,10 +48,18 @@ export function hideModal() {
 }
 
 export function getEvents(activities) {
-    console.log(querystring.encode(activities));
+    let query = '';
+    if (activities && activities.length) {
+        const activityArray = activities.map((activity) => {
+            return activity.text.toLowerCase();
+        });
+
+        query =  '?' + querystring.encode({type:activityArray});
+    }
+
     return dispatch => {
         //dispatch(loading());
-        fetchUtil('http://localhost:3000/events').then((result)=> {
+        fetchUtil(serverEndPoint + '/events' + query).then((result)=> {
             dispatch(gotEvents(result.shuffle()));
         });
     };

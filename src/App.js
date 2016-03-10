@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actionCreators from './actions/actions';
-import CardList from './components/CardList';
+import CardList from './components/cardList';
 import Modal from './components/modal/modal';
 import Search from './components/search/search';
 import Filter from './components/filter/filter';
