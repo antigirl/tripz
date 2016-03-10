@@ -91,8 +91,7 @@ export default class Search extends Component {
         });
 
         this.props.actions.setTags(Object.assign({}, this.props.tags, newItem));
-
-        this.props.actions.getEvents();
+        this.props.actions.getEvents(this.activities);
     }
 
     removeItem(tag, type) {
@@ -122,7 +121,7 @@ export default class Search extends Component {
 
         this.props.actions.setTags(tempState);
 
-        this.props.actions.getEvents();
+        this.props.actions.getEvents(this.activities);
     }
 
     handleSubmit(e) {
@@ -130,7 +129,7 @@ export default class Search extends Component {
         e.stopPropagation();
 
         if (Object.keys(this.props.tags).length) {
-            this.props.actions.getEvents();
+            this.props.actions.getEvents(this.activities);
         }
     }
 

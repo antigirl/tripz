@@ -1,4 +1,5 @@
 const serverEndPoint = 'http://localhost:3000';
+import querystring from 'querystring';
 
 export function loading() {
     return {
@@ -46,7 +47,8 @@ export function hideModal() {
     }
 }
 
-export function getEvents() {
+export function getEvents(activities) {
+    console.log(querystring.encode(activities));
     return dispatch => {
         //dispatch(loading());
         fetchUtil('http://localhost:3000/events').then((result)=> {
