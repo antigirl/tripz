@@ -13,6 +13,13 @@ export function gotEvents(events) {
     }
 }
 
+export function setTags(tags) {
+    return {
+        type: 'SET_TAGS',
+        tags: tags
+    }
+}
+
 export function showModal(type, name, image, date, location, suitablefor, desc, distanceFromHotel) {
     document.body.classList.add('modal__open');
 

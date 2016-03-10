@@ -1,3 +1,15 @@
+const initialAppState = {
+    displayMode: 'cards',
+    tags: {
+        location: {
+            text: 'Norwich'
+        },
+        date:  {
+            text: 'This Weekend'
+        }
+    }
+};
+
 function eventsReducer(state={events:[], loading:true}, action) {
     switch (action.type) {
         case 'GOT_EVENTS':
@@ -16,7 +28,7 @@ function eventsReducer(state={events:[], loading:true}, action) {
     }
 }
 
-function appStateReducer(state={displayMode: 'cards'}, action) {
+function appStateReducer(state = initialAppState, action) {
     switch (action.type) {
         case 'SHOW_MODAL':
         return Object.assign({}, state, {
@@ -33,6 +45,11 @@ function appStateReducer(state={displayMode: 'cards'}, action) {
         const displayMode = state.displayMode === 'map' ? 'cards' : 'map';
         return Object.assign({}, state, {
             displayMode
+        });
+
+        case 'SET_TAGS':
+        return Object.assign({}, state, {
+            tags: action.tags
         });
 
         default:

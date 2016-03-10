@@ -57,12 +57,12 @@ export default class App extends Component {
 
         return (
             <div>
-                <Search actions={actions} />
+                <Search actions={actions} tags={this.props.appState.tags}/>
                 <div className="wrapper">
 
                     <Loader active={events.loading} />
                     {!Boolean(events.loading) && <Filter displayMode={this.props.appState.displayMode} displayToggleAction={this.props.actions.displayToggleClicked}/>}
-                    
+
                     {this.props.appState.displayMode === 'cards' && <CardList cards={events.list} actions={actions} />}
                     {this.props.appState.displayMode === 'map' && <Map actions={actions} events={events.list}/>}
 
