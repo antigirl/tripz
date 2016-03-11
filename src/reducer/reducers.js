@@ -69,6 +69,9 @@ function appStateReducer(state = initialAppState, action) {
             tags: Object.assign({}, state.tags, action.location)
         });
 
+        case 'GOT_LOCATIONS':
+        return Object.assign({}, state, {locations: action.locations});
+
         default:
         return state;
     }

@@ -13,7 +13,7 @@ export default class LocationList extends Component {
                 </div>
                 <div className="location__body">
                     <span className="location__desc">
-                        <div className="location__desc__title">Why visit</div>
+                        <div className="location__desc__title">Persuade me…</div>
                         {this.props.locationData.whyVisit}
                     </span>
                 </div>

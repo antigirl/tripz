@@ -183,34 +183,34 @@
   ],
   "locations": [
     {
-      "name": "Bath",
-      "image": "/locations/bath.jpg",
-      "whyVisit": "Roman baths, Georgian architecture, Jane Austen Centre, The Royal Crescent, afternoon tea, thermal spas"
-    },
-    {
-      "name": "York",
-      "image": "/locations/york.jpg",
-      "whyVisit": "Castle Howard, York Minster, old fortifications and Gothic architecture, haunted legends, streets like a labyrinth"
-    },
-    {
-      "name": "Bristol",
-      "image": "/locations/bristol.jpg",
-      "whyVisit": "The Docks, Clifton Bridge, trip-hop, electronica, art collectives, Banksy pieces, industrial pasts"
-    },
-    {
-      "name": "London",
-      "image": "/locations/london.jpg",
-      "whyVisit": "Pub culture, tea culture, the royal family, Big Ben, Shakespeare, wry humour, theatre, fashion and finance, fish and chips, Tate Modern, the Tube, the gap"
-    },
-    {
       "name": "Edinburgh",
-      "image": "/locations/edinburgh.jpg",
-      "whyVisit": "Arthurs Seat, cutting-edge theatre, mystical fog, stunning cliff-faces, spooky stories, tall spires, underground pubs, and whisky"
+      "image": "/locations/bath.jpg",
+      "whyVisit": "Castles, cathedrals, history... blah. How about craft beers at hip microbrewery Hanging Bat, or brunch and Bloody Marys at Swedish bar Hemma? Now we’re talking."
     },
     {
-      "name": "Brighton",
-      "image": "/locations/brighton.jpg",
-      "whyVisit": "The Lanes, London-by-the-sea, Brighton Pier, LGBTQ culture, independent cafes, cute boutiques, vintage shops, pebble beaches"
+      "name": "Loch Lomond",
+      "image": "/locations/york.jpg",
+      "whyVisit": "Haggis eating competitions, live music, the ‘beach bar’… visit Loch Lomond on 2/3 April for Springfest, the Scottish Food & Drink Festival."
+    },
+    {
+      "name": "Isle of Arran",
+      "image": "/locations/bristol.jpg",
+      "whyVisit": "Island life is in easy reach. Head to Arran for seafood and sea-kayaking, waterfalls and whisky tasting. Just be sure to come back, yeah?"
+    },
+    {
+      "name": "Cairngorm Mountain",
+      "image": "/locations/london.jpg",
+      "whyVisit": "Ride the UK’s highest funicular railway and enjoy views worth travelling for from atop Cairngorm Mountain. Then fly down it on your skis."
+    },
+    {
+      "name": "Killiecrankie",
+      "image": "/locations/killiecrankie.jpg",
+      "whyVisit": "Fancy a highland fling? Of course you do. So go bunjee off a bridge above a gorgeous wooded gorge in Killiecrankie."
+    },
+    {
+      "name": "Kielder Forest",
+      "image": "/locations/kielder-forest.jpg",
+      "whyVisit": "Hop over the border to Kielder Forest in Northumberland for ultimate star gazing. This Dark Sky Park has officially England’s darkest skies."
     }
   ]
 }

@@ -28,6 +28,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
+        this.props.actions.getLocations();
         this.props.actions.getEvents();
         this.props.actions.getLocations();
     }
@@ -45,8 +46,7 @@ export default class App extends Component {
 
                     {(appState.displayMode === 'cards' && appState.tags.location) && <CardList tags={appState.tags} cards={events.list} actions={actions} />}
                     {(appState.displayMode === 'map' && appState.tags.location) && <Map actions={actions} events={events.list}/>}
-
-                    {!appState.tags.location && <LocationList actions={actions} locations={locations.list} />}
+                    {!appState.tags.location && <LocationList actions={actions} locations={appState.locations} />}
 
                     <div className={cs('modal', {
                         'modal--show': appState.modal
