@@ -1,0 +1,13 @@
+{
+  "name": "tripzserver4dist",
+  "version": "1.0.1",
+  "description": "",
+  "scripts": {
+    "start": "json-server --watch db.json --static images"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.8.8"
+  }
+}
