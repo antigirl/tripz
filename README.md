@@ -1,2 +1,4 @@
 # tripz
-NPM START
+dev = npm start
+
+prod = npm run build
