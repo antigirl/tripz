@@ -1,7 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname),
@@ -16,17 +14,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'], {
-              root: __dirname,
-        }),
         new webpack.HotModuleReplacementPlugin(),
-        new CopyWebpackPlugin([{
-            from: 'server',
-            to: 'server'
-        }, {
-            from: 'index.html',
-            to: 'index.html'
-        }])
     ],
     module: {
         loaders: [
