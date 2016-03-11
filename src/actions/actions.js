@@ -1,5 +1,5 @@
 const serverEndPoint = 'http://localhost:3000';
-import querystring from 'querystring';
+import qs from 'qs';
 
 export function loading() {
     return {
@@ -61,7 +61,8 @@ export function getEvents(activities) {
             return activity.text.toLowerCase();
         });
 
-        query =  '?' + querystring.encode({type:activityArray});
+        query =  '?' + qs.stringify({type:activityArray});
+        console.log(query);
     }
 
     return dispatch => {
