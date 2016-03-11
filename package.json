@@ -4,7 +4,7 @@
   "description": "tripz",
   "scripts": {
     "start": "node server.js & json-server --watch server/db.json --static server/images",
-    "build": "webpack"
+    "build": "webpack --config webpack.dist.js"
   },
   "repository": {
     "type": "git",
