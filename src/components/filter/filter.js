@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { getEndPoint } from '../../utils/endpoint';
 import './filterstyle.scss';
 
 const iconToDisplayByViewMode = {
-    'cards': 'http://localhost:3000/map.svg',
-    'map': 'http://localhost:3000/grid.svg'
+    'cards': getEndPoint() + '/map.svg',
+    'map': getEndPoint() + '/grid.svg'
 };
 
 export default class Filter extends Component {
-
     render() {
         return(
             <div className="filters">

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { getEndPoint } from '../../utils/endpoint';
 import './style.scss';
 
 const imageMap = {
-    'music': 'http://localhost:3000/mapicons/music.svg',
-    'food': 'http://localhost:3000/mapicons/food.svg',
-    'comedy': 'http://localhost:3000/mapicons/comedy.svg',
-    'culture': 'http://localhost:3000/mapicons/culture.svg',
-    'exhibition': 'http://localhost:3000/mapicons/exhibition.svg'
+    'music': getEndPoint() +'/mapicons/music.svg',
+    'food': getEndPoint() +'/mapicons/food.svg',
+    'comedy': getEndPoint() +'/mapicons/comedy.svg',
+    'culture': getEndPoint() +'/mapicons/culture.svg',
+    'exhibition': getEndPoint() +'/mapicons/exhibition.svg'
 };
 
 export default class MapPin extends Component {

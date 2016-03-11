@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import cs from 'classnames';
+import { getEndPoint } from '../../utils/endpoint';
 import './modalstyle.scss';
 
 export default class Modal extends Component {
     render() {
         const { type, name, image, date, location, suitablefor, desc, actions, distanceFromHotel} = this.props;
         const cardBgStyles = {
-            backgroundImage: `url(${image})`
+            backgroundImage: 'url(' + getEndPoint() + '/' + image + ')'
         };
 
         const mapStyles = {
-            background: 'url(http://localhost:3000/staticmap.png) 50% 50% / cover no-repeat'
+            background: 'url(' + getEndPoint() + '/staticmap.png) 50% 50% / cover no-repeat'
         };
 
         const cardTypeClass = cs('modal__type', type.toLowerCase());
@@ -18,16 +19,16 @@ export default class Modal extends Component {
         return (
             <div className="modal__body">
                 <div className="modal__image" style={cardBgStyles}>
-                    <span className="modal__fav"><img src="http://localhost:3000/heart.svg" width="40" /></span>
+                    <span className="modal__fav"><img src={getEndPoint() + '/heart.svg'} width="40" /></span>
                     <div className={cardTypeClass}>{type}</div>
                     <h1 className="modal__header">{name}</h1>
                 </div>
 
                 <div className="modal__content">
                     <ul className="modal__items">
-                        <li> <span className="modal__items-icons"><img src="http://localhost:3000/calendar.svg" width="20" /></span> {date} </li>
-                        <li> <span className="modal__items-icons"><img src="http://localhost:3000/map.svg" height="20"/></span> {location} - ({distanceFromHotel} from your hotel)</li>
-                        <li className="modal__items-suitable"> <span className="modal__items-icons"><img src="http://localhost:3000/for.svg" height="20"/></span> {suitablefor} </li>
+                        <li> <span className="modal__items-icons"><img src={getEndPoint() + '/calendar.svg'} width="20" /></span> {date} </li>
+                        <li> <span className="modal__items-icons"><img src={getEndPoint() + '/map.svg'} height="20"/></span> {location} - ({distanceFromHotel} from your hotel)</li>
+                        <li className="modal__items-suitable"> <span className="modal__items-icons"><img src={getEndPoint() + '/for.svg'} height="20"/></span> {suitablefor} </li>
                     </ul>
 
                     <button className="modal__buy"> GET TICKETS</button>

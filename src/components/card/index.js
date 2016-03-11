@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import { getEndPoint } from '../../utils/endpoint';
 import './cardstyle.scss';
 
 export default class Card extends Component {
@@ -8,7 +9,7 @@ export default class Card extends Component {
         const truncateDesc = desc.substring(0, 100);
 
         const cardBgStyles = {
-            background: 'url(' + image + ') 50% 50% / cover no-repeat'
+            background: 'url(' + getEndPoint() + '/' + image + ') 50% 50% / cover no-repeat'
         };
 
         const cardTypeClass = classNames('card__type', type.toLowerCase());
@@ -17,7 +18,7 @@ export default class Card extends Component {
             <div className="card" onClick={() => actions.showModal(type, name, image, date, location, suitablefor, desc, distanceFromHotel)}>
                 <div className="card__image" style={cardBgStyles}>
                     <div className={cardTypeClass}>{type}</div>
-                    <span className="card__fav"><img src="http://localhost:3000/heart.svg" width="15" /></span>
+                    <span className="card__fav"><img src={getEndPoint() + '/heart.svg'} width="15" /></span>
                 </div>
 
                 <div className="card__body">
@@ -27,8 +28,8 @@ export default class Card extends Component {
                     </span>
 
                     <ul className="card__footer">
-                        <li> <span className="card__footericons"><img src="http://localhost:3000/calendar.svg" width="12" /></span> {date} </li>
-                        <li> <span className="card__footericons"><img src="http://localhost:3000/map.svg" height="12"/></span> {this.props.tags.location.text} </li>
+                        <li> <span className="card__footericons"><img src={getEndPoint() + '/calendar.svg'} width="12" /></span> {date} </li>
+                        <li> <span className="card__footericons"><img src={getEndPoint() + '/map.svg'} height="12"/></span> {this.props.tags.location.text} </li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-const serverEndPoint = 'http://localhost:3000';
 import qs from 'qs';
+import { getEndPoint } from '../utils/endpoint';
 
 export function loading() {
     return {
@@ -67,7 +67,7 @@ export function getEvents(activities) {
 
     return dispatch => {
         //dispatch(loading());
-        fetchUtil(serverEndPoint + '/events' + query).then((result)=> {
+        fetchUtil(getEndPoint() + '/events' + query).then((result)=> {
             dispatch(gotEvents(result.shuffle()));
         });
     };
@@ -75,7 +75,7 @@ export function getEvents(activities) {
 
 export function getLocations() {
     return dispatch => {
-        fetchUtil(serverEndPoint + '/locations').then((result)=> {
+        fetchUtil(getEndPoint() + '/locations').then((result)=> {
             dispatch(gotLocations(result));
         });
     };
