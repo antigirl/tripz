@@ -184,27 +184,27 @@
   "locations": [
     {
       "name": "Edinburgh",
-      "image": "/locations/bath.jpg",
+      "image": "/locations/edinburgh.jpg",
       "whyVisit": "Castles, cathedrals, history... blah. How about craft beers at hip microbrewery Hanging Bat, or brunch and Bloody Marys at Swedish bar Hemma? Now we’re talking."
     },
     {
       "name": "Loch Lomond",
-      "image": "/locations/york.jpg",
+      "image": "/locations/LochLomond.jpg",
       "whyVisit": "Haggis eating competitions, live music, the ‘beach bar’… visit Loch Lomond on 2/3 April for Springfest, the Scottish Food & Drink Festival."
     },
     {
       "name": "Isle of Arran",
-      "image": "/locations/bristol.jpg",
+      "image": "/locations/arran.jpg",
       "whyVisit": "Island life is in easy reach. Head to Arran for seafood and sea-kayaking, waterfalls and whisky tasting. Just be sure to come back, yeah?"
     },
     {
       "name": "Cairngorm Mountain",
-      "image": "/locations/london.jpg",
+      "image": "/locations/cairngorms.jpg",
       "whyVisit": "Ride the UK’s highest funicular railway and enjoy views worth travelling for from atop Cairngorm Mountain. Then fly down it on your skis."
     },
     {
       "name": "Killiecrankie",
-      "image": "/locations/killiecrankie.jpg",
+      "image": "/locations/kilernystuff.jpg",
       "whyVisit": "Fancy a highland fling? Of course you do. So go bunjee off a bridge above a gorgeous wooded gorge in Killiecrankie."
     },
     {
