@@ -9,12 +9,21 @@ const iconToDisplayByViewMode = {
 
 export default class Filter extends Component {
     render() {
+
+        const downArrow = {
+            width: '8px',
+            height: '10px',
+            background: 'url(' + getEndPoint() + '/downarrow.svg) 50% 50% / cover no-repeat',
+            display: 'inline-block',
+            float: 'right'
+        };
+
         return(
             <div className="filters">
                 <ul className="filter__list">
-                    <li>WEATHER</li>
-                    <li>ONLY SHOW ME...</li>
-                    <li>SORT BY</li>
+                    <li>WEATHER <span style={downArrow}></span></li>
+                    <li>ONLY SHOW ME... <span style={downArrow}></span></li>
+                    <li>SORT BY <span style={downArrow}></span></li>
                 </ul>
                 {this.props.showViewModeToggle ?
                 <button className="filter__toggle" onClick={this.props.displayToggleAction}>

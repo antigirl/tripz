@@ -23,16 +23,6 @@
         &:last-child {
             border-right: none;
         }
-
-        &:before {
-            content: "";
-            background: url(http://localhost:3000/downarrow.svg) 50% 50% / cover no-repeat;
-            width: 8px;
-            height: 10px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
     }
 }
 
