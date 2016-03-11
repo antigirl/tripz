@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "",
   "scripts": {
-    "start": "json-server --watch db.json --static images"
+    "start": "json-server --watch db.json --static images --port 4000"
   },
   "author": "",
   "license": "ISC",

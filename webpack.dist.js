@@ -25,12 +25,7 @@ module.exports = {
         }])
     ],
     module: {
-        loaders: [
-        {
-            test: /\.js$/,
-            loader: 'react-hot',
-            include: path.join(__dirname, 'src')
-        }, {
+        loaders: [{
             test: /\.js$/,
             loader: 'babel',
             query: {
