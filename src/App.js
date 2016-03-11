@@ -28,7 +28,6 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        this.props.actions.getLocations();
         this.props.actions.getEvents();
         this.props.actions.getLocations();
     }
@@ -62,7 +61,6 @@ export default class App extends Component {
 function mapStateToProps(state) {
   return {
       events: state.events,
-      locations: state.locations,
       appState: state.appState
   };
 }
