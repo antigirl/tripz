@@ -62,7 +62,6 @@ export function getEvents(activities) {
         });
 
         query =  '?' + qs.stringify({type:activityArray});
-        console.log(query);
     }
 
     return dispatch => {
@@ -75,7 +74,7 @@ export function getEvents(activities) {
 
 export function getLocations() {
     return dispatch => {
-        fetchUtil(getEndPoint() + '/locations').then((result)=> {
+        fetchUtil(getEndPoint() + '/locat').then((result)=> {
             dispatch(gotLocations(result));
         });
     };
